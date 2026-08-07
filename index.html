@@ -3,33 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Hà Hoài Nhi</title>
+
+    <title>Hoài Nhi — Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Hà Hoài Nhi</h1>
-        <p>FinTech Student | Business & Technology</p>
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <a href="#home" class="logo">
+            PORTFOLIO
+        </a>
+
+        <button class="menu-button" id="menuButton">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </header>
 
-    <main>
-        <section>
-            <h2>Xin chào 👋</h2>
-            <p>
-                Mình là sinh viên FinTech, quan tâm đến tài chính,
-                công nghệ và các sản phẩm số.
+
+    <!-- ================= MENU ================= -->
+
+    <nav class="menu" id="menu">
+
+        <div class="menu-inner">
+
+            <p class="menu-small">
+                NAVIGATION
             </p>
+
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#activities">Activities</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <main>
+
+        <section class="home" id="home">
+
+            <!-- Background dots -->
+            <div class="dots"></div>
+
+            <!-- Green clouds -->
+
+            <div class="cloud cloud-green cloud-1"></div>
+            <div class="cloud cloud-green cloud-2"></div>
+            <div class="cloud cloud-green cloud-3"></div>
+
+            <!-- White clouds -->
+
+            <div class="cloud cloud-white cloud-4"></div>
+            <div class="cloud cloud-white cloud-5"></div>
+            <div class="cloud cloud-white cloud-6"></div>
+
+
+            <!-- Stars -->
+
+            <div class="star star-1">✦</div>
+            <div class="star star-2">✦</div>
+            <div class="star star-3">✦</div>
+            <div class="star star-4">✦</div>
+
+
+            <!-- Decorative bubbles -->
+
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+
+
+            <!-- BIG TITLE -->
+
+            <h1 class="hero-title">
+                PORTFOLIO
+            </h1>
+
+
+            <!-- RABBIT -->
+
+            <div class="rabbit-container">
+
+                <svg
+                    class="rabbit"
+                    viewBox="0 0 500 500"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <!-- astronaut helmet -->
+
+                    <ellipse
+                        cx="285"
+                        cy="160"
+                        rx="130"
+                        ry="130"
+                        fill="#ffffff"
+                    />
+
+                    <ellipse
+                        cx="285"
+                        cy="160"
+                        rx="110"
+                        ry="110"
+                        fill="#dff6ff"
+                        stroke="#9bcfea"
+                        stroke-width="7"
+                    />
+
+
+                    <!-- rabbit ears -->
+
+                    <ellipse
+                        cx="245"
+                        cy="115"
+                        rx="35"
+                        ry="65"
+                        fill="#ffffff"
+                        transform="rotate(-20 245 115)"
+                    />
+
+                    <ellipse
+                        cx="330"
+                        cy="110"
+                        rx="35"
+                        ry="65"
+                        fill="#ffffff"
+                        transform="rotate(20 330 110)"
+                    />
+
+                    <ellipse
+                        cx="245"
+                        cy="115"
+                        rx="17"
+                        ry="45"
+                        fill="#ffb6c8"
+                        transform="rotate(-20 245 115)"
+                    />
+
+                    <ellipse
+                        cx="330"
+                        cy="110"
+                        rx="17"
+                        ry="45"
+                        fill="#ffb6c8"
+                        transform="rotate(20 330 110)"
+                    />
+
+
+                    <!-- rabbit face -->
+
+                    <ellipse
+                        cx="285"
+                        cy="175"
+                        rx="80"
+                        ry="70"
+                        fill="#ffffff"
+                    />
+
+
+                    <!-- glasses -->
+
+                    <circle
+                        cx="250"
+                        cy="170"
+                        r="32"
+                        fill="#70d7ff"
+                        stroke="#235b91"
+                        stroke-width="8"
+                    />
+
+                    <circle
+                        cx="320"
+                        cy="170"
+                        r="32"
+                        fill="#70d7ff"
+                        stroke="#235b91"
+                        stroke-width="8"
+                    />
+
+                    <line
+                        x1="282"
+                        y1="170"
+                        x2="288"
+                        y2="170"
+                        stroke="#235b91"
+                        stroke-width="8"
+                    />
+
+
+                    <!-- eyes -->
+
+                    <circle cx="250" cy="170" r="8" fill="#163f6d"/>
+                    <circle cx="320" cy="170" r="8" fill="#163f6d"/>
+
+
+                    <!-- nose -->
+
+                    <path
+                        d="M280 195 Q285 202 290 195"
+                        stroke="#e48b9d"
+                        stroke-width="5"
+                        fill="none"
+                    />
+
+
+                    <!-- astronaut body -->
+
+                    <path
+                        d="
+                        M210 240
+                        Q285 205 360 240
+                        L400 390
+                        Q285 450 170 390
+                        Z
+                        "
+                        fill="#ffffff"
+                    />
+
+                    <!-- blue suit -->
+
+                    <path
+                        d="
+                        M210 280
+                        Q285 250 360 280
+                        L375 390
+                        Q285 425 195 390
+                        Z
+                        "
+                        fill="#e9f8ff"
+                        stroke="#8bc8ed"
+                        stroke-width="7"
+                    />
+
+
+                    <!-- left arm -->
+
+                    <path
+                        d="M215 285 Q160 300 150 355"
+                        stroke="#ffffff"
+                        stroke-width="35"
+                        stroke-linecap="round"
+                        fill="none"
+                    />
+
+
+                    <!-- right arm -->
+
+                    <path
+                        d="M355 285 Q400 305 410 350"
+                        stroke="#ffffff"
+                        stroke-width="35"
+                        stroke-linecap="round"
+                        fill="none"
+                    />
+
+
+                    <!-- legs -->
+
+                    <ellipse
+                        cx="225"
+                        cy="420"
+                        rx="35"
+                        ry="22"
+                        fill="#235b91"
+                    />
+
+                    <ellipse
+                        cx="350"
+                        cy="420"
+                        rx="35"
+                        ry="22"
+                        fill="#235b91"
+                    />
+
+
+                    <!-- donut / ring -->
+
+                    <circle
+                        cx="125"
+                        cy="330"
+                        r="60"
+                        fill="#ffd978"
+                    />
+
+                    <circle
+                        cx="125"
+                        cy="330"
+                        r="28"
+                        fill="#e9f8ff"
+                    />
+
+
+                    <!-- hand holding ring -->
+
+                    <circle
+                        cx="175"
+                        cy="305"
+                        r="20"
+                        fill="#ffffff"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <!-- floating stars -->
+
+            <div class="floating-star fs-1">✦</div>
+            <div class="floating-star fs-2">✦</div>
+            <div class="floating-star fs-3">✦</div>
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <div>
+                    Hoài Nhi
+                </div>
+
+                <div>
+                    0343648073
+                </div>
+
+                <a href="mailto:hhnhi21@gmail.com">
+                    hhnhi21@gmail.com
+                </a>
+
+            </footer>
+
         </section>
 
-        <section>
-            <h2>Dự án</h2>
-            <p>Blockchain Project</p>
-            <p>Financial Data Project</p>
+
+        <!-- ================= OTHER SECTIONS ================= -->
+
+        <section class="content-section" id="about">
+            <div>
+                <p class="section-number">01</p>
+                <h2>About Me</h2>
+                <p>
+                    Xin chào, mình là Hà Hoài Nhi.
+                    Đây là portfolio cá nhân của mình.
+                </p>
+            </div>
         </section>
+
+
+        <section class="content-section" id="projects">
+            <div>
+                <p class="section-number">02</p>
+                <h2>Projects</h2>
+                <p>
+                    Những dự án học tập và dự án cá nhân của mình.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="content-section" id="skills">
+            <div>
+                <p class="section-number">03</p>
+                <h2>Skills</h2>
+                <p>
+                    Python · Excel · SQL · GitHub · Canva · FinTech
+                </p>
+            </div>
+        </section>
+
+
+        <section class="content-section" id="experience">
+            <div>
+                <p class="section-number">04</p>
+                <h2>Experience</h2>
+                <p>
+                    Kinh nghiệm học tập, thực tập và làm việc.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="content-section" id="activities">
+            <div>
+                <p class="section-number">05</p>
+                <h2>Activities</h2>
+                <p>
+                    Hoạt động CLB, sự kiện và các hoạt động ngoại khóa.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="content-section" id="certificates">
+            <div>
+                <p class="section-number">06</p>
+                <h2>Certificates</h2>
+                <p>
+                    Các chứng chỉ và thành tích.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="content-section" id="contact">
+            <div>
+                <p class="section-number">07</p>
+                <h2>Contact</h2>
+
+                <p>
+                    0343648073
+                </p>
+
+                <a href="mailto:hhnhi21@gmail.com">
+                    hhnhi21@gmail.com
+                </a>
+            </div>
+        </section>
+
     </main>
 
+
     <script src="script.js"></script>
+
 </body>
 </html>

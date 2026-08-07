@@ -1,0 +1,666 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    background: #20a8df;
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 35px 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -1px;
+
+    color: white;
+}
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-button {
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    background: rgba(255,255,255,0.2);
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+}
+
+.menu-button:hover {
+    transform: scale(1.08);
+}
+
+.menu-button span {
+    width: 23px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    position: fixed;
+
+    inset: 0;
+
+    background: #087fbd;
+
+    z-index: 90;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s ease;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-inner {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.menu-small {
+    font-size: 13px;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.6;
+}
+
+.menu-inner a {
+    font-size: clamp(35px, 5vw, 70px);
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.menu-inner a:hover {
+    transform: translateX(15px);
+    color: #ffe16b;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.12) 1px,
+            transparent 1.5px
+        );
+
+    background-size: 14px 14px;
+
+    background-color: #1da8df;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero-title {
+    position: absolute;
+
+    left: 4vw;
+    top: 38%;
+
+    z-index: 10;
+
+    font-size: clamp(80px, 12vw, 190px);
+
+    line-height: 0.8;
+
+    font-weight: 950;
+
+    letter-spacing: -8px;
+
+    color: white;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   RABBIT
+========================= */
+
+.rabbit-container {
+    position: absolute;
+
+    z-index: 12;
+
+    width: min(42vw, 550px);
+
+    right: 9%;
+    top: 8%;
+
+    animation: rabbitFloat 4s ease-in-out infinite;
+}
+
+.rabbit {
+    width: 100%;
+    height: auto;
+
+    filter:
+        drop-shadow(0 20px 20px rgba(0,0,0,0.12));
+}
+
+@keyframes rabbitFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(2deg);
+    }
+
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(3px);
+
+    z-index: 2;
+}
+
+
+/* green */
+
+.cloud-green {
+    background: #aee84f;
+}
+
+
+/* white */
+
+.cloud-white {
+    background: rgba(255,255,255,0.95);
+}
+
+
+/* individual clouds */
+
+.cloud-1 {
+    width: 500px;
+    height: 150px;
+
+    left: -100px;
+    top: -40px;
+
+    transform: rotate(-15deg);
+
+    animation: cloudMove1 10s ease-in-out infinite alternate;
+}
+
+.cloud-2 {
+    width: 350px;
+    height: 130px;
+
+    right: -100px;
+    top: 20px;
+
+    animation: cloudMove2 12s ease-in-out infinite alternate;
+}
+
+.cloud-3 {
+    width: 300px;
+    height: 120px;
+
+    left: -100px;
+    bottom: -20px;
+
+    animation: cloudMove1 9s ease-in-out infinite alternate-reverse;
+}
+
+
+.cloud-4 {
+    width: 550px;
+    height: 160px;
+
+    left: -150px;
+    bottom: -70px;
+
+    animation: cloudMove2 13s ease-in-out infinite alternate;
+}
+
+.cloud-5 {
+    width: 400px;
+    height: 130px;
+
+    right: -120px;
+    bottom: -50px;
+
+    animation: cloudMove1 11s ease-in-out infinite alternate;
+}
+
+.cloud-6 {
+    width: 250px;
+    height: 100px;
+
+    right: 20%;
+    top: -60px;
+
+    animation: cloudMove2 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes cloudMove1 {
+
+    from {
+        transform: translateX(-20px);
+    }
+
+    to {
+        transform: translateX(60px);
+    }
+
+}
+
+@keyframes cloudMove2 {
+
+    from {
+        transform: translateX(40px);
+    }
+
+    to {
+        transform: translateX(-50px);
+    }
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+    position: absolute;
+
+    color: white;
+
+    z-index: 5;
+
+    font-size: 35px;
+
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.star-1 {
+    top: 10%;
+    left: 25%;
+}
+
+.star-2 {
+    top: 25%;
+    left: 4%;
+}
+
+.star-3 {
+    right: 8%;
+    top: 10%;
+}
+
+.star-4 {
+    right: 20%;
+    bottom: 25%;
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   BUBBLES
+========================= */
+
+.bubble {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.8),
+            rgba(255,255,255,0.1)
+        );
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    z-index: 6;
+
+    animation: bubbleFloat 5s ease-in-out infinite;
+}
+
+.bubble-1 {
+    width: 35px;
+    height: 35px;
+
+    right: 13%;
+    top: 38%;
+}
+
+.bubble-2 {
+    width: 20px;
+    height: 20px;
+
+    left: 23%;
+    top: 52%;
+}
+
+.bubble-3 {
+    width: 45px;
+    height: 45px;
+
+    right: 5%;
+    top: 25%;
+}
+
+@keyframes bubbleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+}
+
+
+/* =========================
+   FLOATING STARS
+========================= */
+
+.floating-star {
+    position: absolute;
+
+    color: #d9ff6b;
+
+    font-size: 80px;
+
+    z-index: 3;
+
+    animation: starFloat 5s ease-in-out infinite;
+}
+
+.fs-1 {
+    left: 8%;
+    top: 20%;
+}
+
+.fs-2 {
+    right: 2%;
+    bottom: 15%;
+}
+
+.fs-3 {
+    left: 25%;
+    bottom: 3%;
+}
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(20deg);
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    position: absolute;
+
+    z-index: 20;
+
+    bottom: 25px;
+
+    left: 40px;
+    right: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.footer div:nth-child(2) {
+    text-align: center;
+}
+
+.footer a {
+    text-align: right;
+}
+
+
+/* =========================
+   OTHER PAGES
+========================= */
+
+.content-section {
+    min-height: 100vh;
+
+    background: #f7fbff;
+
+    color: #075c8e;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10vw;
+}
+
+.content-section > div {
+    max-width: 850px;
+}
+
+.section-number {
+    font-size: 18px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.5;
+}
+
+.content-section h2 {
+    font-size: clamp(60px, 10vw, 150px);
+
+    line-height: 0.9;
+
+    margin-bottom: 40px;
+
+    letter-spacing: -5px;
+}
+
+.content-section p {
+    font-size: 22px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 25px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .hero-title {
+        left: 5%;
+
+        top: 43%;
+
+        font-size: 17vw;
+
+        letter-spacing: -3px;
+    }
+
+    .rabbit-container {
+        width: 65vw;
+
+        right: -5%;
+        top: 18%;
+    }
+
+    .footer {
+        left: 20px;
+        right: 20px;
+
+        font-size: 12px;
+    }
+
+    .menu-inner a {
+        font-size: 38px;
+    }
+
+    .content-section {
+        padding: 30px;
+    }
+
+    .content-section h2 {
+        font-size: 65px;
+    }
+
+}
