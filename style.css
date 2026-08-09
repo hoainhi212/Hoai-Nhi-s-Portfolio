@@ -1,6 +1,6 @@
-/* =========================
+/* ==============================
    RESET
-========================= */
+============================== */
 
 * {
     margin: 0;
@@ -8,659 +8,766 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-    background: #20a8df;
-    color: white;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
+    overflow: hidden;
 }
 
 
-/* =========================
+/* ==============================
+   HOME
+============================== */
+
+.home {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.9) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(255,255,255,0.8) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 40% 70%,
+            rgba(255,255,255,0.7) 0 2px,
+            transparent 3px
+        ),
+
+        linear-gradient(
+            #0788cf,
+            #20a9df
+        );
+}
+
+
+/* ==============================
+   DOTTED BACKGROUND
+============================== */
+
+.home::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.3;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 9px 9px;
+
+    pointer-events: none;
+}
+
+
+/* ==============================
    HEADER
-========================= */
+============================== */
 
 .header {
-    position: fixed;
+    position: absolute;
 
     top: 0;
     left: 0;
 
     width: 100%;
 
-    padding: 35px 55px;
+    padding: 25px 40px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    z-index: 100;
+    z-index: 50;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: -1px;
+    color: rgb(17, 175, 233);
 
-    color: white;
+    font-size: 25px;
+
+    font-family:"Aclonica", sans-serif;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
 }
 
 
-/* =========================
-   HAMBURGER
-========================= */
+/* ==============================
+   MENU BUTTON
+============================== */
 
 .menu-button {
+    position: fixed;
+
+    top: 25px;
+    right: 30px;
+
     width: 55px;
-    height: 55px;
+    height: 48px;
 
     border: none;
-    background: rgba(255,255,255,0.2);
+    border-radius: 14px;
 
-    border-radius: 50%;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 6px;
+    background: rgba(255,255,255,0.18);
 
     cursor: pointer;
 
-    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    transition: 0.3s;
-}
+    gap: 5px;
 
-.menu-button:hover {
-    transform: scale(1.08);
+    z-index: 9999;
 }
 
 .menu-button span {
-    width: 23px;
+    width: 24px;
     height: 3px;
 
     background: white;
 
     border-radius: 10px;
+ }
 
-    transition: 0.3s;
-}
-
-
-/* =========================
+/* ==============================
    MENU
-========================= */
+============================== */
 
 .menu {
     position: fixed;
 
-    inset: 0;
+    top: 85px;
+    right: 30px;
 
-    background: #087fbd;
+    width: 250px;
 
-    z-index: 90;
+    padding: 15px;
 
-    display: flex;
+    background: white;
 
-    align-items: center;
-    justify-content: center;
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.2);
+
+    z-index: 100;
 
     opacity: 0;
-    visibility: hidden;
 
-    transition: 0.4s ease;
-}
+    transform: translateY(-10px);
 
-.menu.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-inner {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 20px;
-}
-
-.menu-small {
-    font-size: 13px;
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-
-    opacity: 0.6;
-}
-
-.menu-inner a {
-    font-size: clamp(35px, 5vw, 70px);
-
-    font-weight: 800;
+    pointer-events: none;
 
     transition: 0.3s;
 }
 
-.menu-inner a:hover {
-    transform: translateX(15px);
-    color: #ffe16b;
+.menu.show {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.menu a {
+    display: block;
+
+    font-family: "Roboto Slab", sans-serif;
+    
+    padding: 14px;
+
+    color: #0879bb;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+}
+
+.menu a:hover {
+    background: #e8f7ff;
 }
 
 
-/* =========================
-   HOME
-========================= */
-
-.home {
-    position: relative;
-
-    width: 100%;
-    min-height: 100vh;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,255,255,0.12) 1px,
-            transparent 1.5px
-        );
-
-    background-size: 14px 14px;
-
-    background-color: #1da8df;
-}
-
-
-/* =========================
-   TITLE
-========================= */
-
-.hero-title {
-    position: absolute;
-
-    left: 4vw;
-    top: 38%;
-
-    z-index: 10;
-
-    font-size: clamp(80px, 12vw, 190px);
-
-    line-height: 0.8;
-
-    font-weight: 950;
-
-    letter-spacing: -8px;
-
-    color: white;
-
-    white-space: nowrap;
-
-    pointer-events: none;
-}
-
-
-/* =========================
-   RABBIT
-========================= */
-
-.rabbit-container {
-    position: absolute;
-
-    z-index: 12;
-
-    width: min(42vw, 550px);
-
-    right: 9%;
-    top: 8%;
-
-    animation: rabbitFloat 4s ease-in-out infinite;
-}
-
-.rabbit {
-    width: 100%;
-    height: auto;
-
-    filter:
-        drop-shadow(0 20px 20px rgba(0,0,0,0.12));
-}
-
-@keyframes rabbitFloat {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-18px) rotate(2deg);
-    }
-
-}
-
-
-/* =========================
-   CLOUDS
-========================= */
+/* ==============================
+   CLOUD
+============================== */
 
 .cloud {
     position: absolute;
 
-    border-radius: 50%;
+    width: 500px;
+    height: 120px;
 
-    filter: blur(3px);
+    border-radius: 100px;
 
     z-index: 2;
 }
 
 
-/* green */
-
-.cloud-green {
-    background: #aee84f;
-}
-
-
-/* white */
-
-.cloud-white {
-    background: rgba(255,255,255,0.95);
-}
-
-
-/* individual clouds */
+/* ==============================
+   CLOUD 1
+============================== */
 
 .cloud-1 {
-    width: 500px;
-    height: 150px;
+    left: -150px;
 
-    left: -100px;
-    top: -40px;
+    top: 50px;
 
-    transform: rotate(-15deg);
+    background: white;
 
-    animation: cloudMove1 10s ease-in-out infinite alternate;
+    opacity: 0.9;
+
+    animation:
+        cloudMove1
+        12s
+        infinite
+        alternate
+        ease-in-out;
 }
+
+.cloud-1::before,
+.cloud-1::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.cloud-1::before {
+    width: 220px;
+    height: 220px;
+
+    left: 70px;
+    bottom: 20px;
+
+    background: white;
+}
+
+.cloud-1::after {
+    width: 250px;
+    height: 180px;
+
+    right: 50px;
+    bottom: 0;
+
+    background: white;
+}
+
+
+/* ==============================
+   CLOUD 2 — XANH
+============================== */
 
 .cloud-2 {
-    width: 350px;
-    height: 130px;
+    right: -150px;
 
-    right: -100px;
-    top: 20px;
+    bottom: 80px;
 
-    animation: cloudMove2 12s ease-in-out infinite alternate;
+    background: #baf58b;
+
+    opacity: 0.8;
+
+    filter: blur(3px);
+
+    animation:
+        cloudMove2
+        15s
+        infinite
+        alternate
+        ease-in-out;
 }
+
+.cloud-2::before,
+.cloud-2::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #baf58b;
+}
+
+
+.cloud-2::before {
+    width: 200px;
+    height: 200px;
+
+    left: 70px;
+    bottom: 20px;
+}
+
+.cloud-2::after {
+    width: 260px;
+    height: 180px;
+
+    right: 50px;
+    bottom: 0;
+}
+
+
+/* ==============================
+   CLOUD 3
+============================== */
 
 .cloud-3 {
-    width: 300px;
-    height: 120px;
+    left: -180px;
 
-    left: -100px;
-    bottom: -20px;
+    bottom: -80px;
 
-    animation: cloudMove1 9s ease-in-out infinite alternate-reverse;
+    background: white;
+
+    opacity: 0.9;
+
+    transform: scale(1.3);
 }
 
 
-.cloud-4 {
-    width: 550px;
-    height: 160px;
-
-    left: -150px;
-    bottom: -70px;
-
-    animation: cloudMove2 13s ease-in-out infinite alternate;
-}
-
-.cloud-5 {
-    width: 400px;
-    height: 130px;
-
-    right: -120px;
-    bottom: -50px;
-
-    animation: cloudMove1 11s ease-in-out infinite alternate;
-}
-
-.cloud-6 {
-    width: 250px;
-    height: 100px;
-
-    right: 20%;
-    top: -60px;
-
-    animation: cloudMove2 8s ease-in-out infinite alternate;
-}
-
+/* ==============================
+   CLOUD ANIMATION
+============================== */
 
 @keyframes cloudMove1 {
 
     from {
-        transform: translateX(-20px);
+        transform: translateX(0);
     }
 
     to {
-        transform: translateX(60px);
+        transform: translateX(120px);
     }
-
-}
+ }
 
 @keyframes cloudMove2 {
 
     from {
-        transform: translateX(40px);
+        transform: translateX(0);
     }
 
     to {
-        transform: translateX(-50px);
+        transform: translateX(-120px);
     }
+ }
 
-}
-
-
-/* =========================
+/* ==============================
    STARS
-========================= */
+============================== */
 
 .star {
     position: absolute;
 
     color: white;
 
+    font-size: 40px;
+
     z-index: 5;
 
-    font-size: 35px;
-
-    animation: twinkle 2s ease-in-out infinite alternate;
+    animation:
+        twinkle
+        3s
+        infinite
+        ease-in-out;
 }
 
 .star-1 {
-    top: 10%;
-    left: 25%;
+    left: 12%;
+
+    top: 23%;
 }
 
 .star-2 {
-    top: 25%;
-    left: 4%;
+    right: 12%;
+
+    top: 28%;
+
+    font-size: 25px;
 }
 
 .star-3 {
-    right: 8%;
-    top: 10%;
-}
-
-.star-4 {
-    right: 20%;
+    left: 25%;
     bottom: 25%;
+
+    font-size: 22px;
 }
 
 
 @keyframes twinkle {
 
-    from {
-        opacity: 0.3;
-        transform: scale(0.7);
-    }
+    50% {
+        transform:
+            scale(1.3)
+            rotate(10deg);
 
-    to {
-        opacity: 1;
-        transform: scale(1.15);
+        opacity: 0.5;
     }
-
 }
 
 
-/* =========================
-   BUBBLES
-========================= */
+/* ==============================
+   HERO
+============================== */
 
-.bubble {
+.hero {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* ==============================
+PORTFOLIO TITLE
+============================== */
+.portfolio-title {
+
     position: absolute;
 
-    border-radius: 50%;
+    left: 50%;
+    top: 50%;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.8),
-            rgba(255,255,255,0.1)
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: clamp(100px, 14vw, 310px);
+
+    font-weight: 900;
+
+    letter-spacing: -6px;
+
+    line-height: 1;
+
+    z-index: 30;
+
+    white-space: nowrap;
+}
+
+
+/* ==============================
+RABBIT AREA
+============================== */
+
+.rabbit-area {
+    position: relative;
+
+    width: 220px;
+    height: 200px;
+
+    margin: 0 -10px;
+    padding: 0;
+
+    flex-shrink: 0;
+
+    z-index: 10;
+}
+
+
+/* ==============================
+LETTER O
+============================== */
+
+.letter-o {
+    display: none;
+}
+
+
+/* ==============================
+RABBIT CONTAINER
+============================== */
+
+.rabbit {
+    position: absolute;
+
+    width: 750px;
+    height: auto;
+
+    left: 0%;
+    top: -20%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+/* ==============================
+RABBIT IMAGE
+============================== */
+
+.rabbit img {
+    display: block;
+
+    width: 1000px !important;
+    height: auto !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 15px 10px
+            rgba(0,60,100,0.2)
         );
-
-    border: 1px solid rgba(255,255,255,0.6);
-
-    z-index: 6;
-
-    animation: bubbleFloat 5s ease-in-out infinite;
-}
-
-.bubble-1 {
-    width: 35px;
-    height: 35px;
-
-    right: 13%;
-    top: 38%;
-}
-
-.bubble-2 {
-    width: 20px;
-    height: 20px;
-
-    left: 23%;
-    top: 52%;
-}
-
-.bubble-3 {
-    width: 45px;
-    height: 45px;
-
-    right: 5%;
-    top: 25%;
-}
-
-@keyframes bubbleFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
 }
 
 
-/* =========================
-   FLOATING STARS
-========================= */
-
-.floating-star {
-    position: absolute;
-
-    color: #d9ff6b;
-
-    font-size: 80px;
-
-    z-index: 3;
-
-    animation: starFloat 5s ease-in-out infinite;
-}
-
-.fs-1 {
-    left: 8%;
-    top: 20%;
-}
-
-.fs-2 {
-    right: 2%;
-    bottom: 15%;
-}
-
-.fs-3 {
-    left: 25%;
-    bottom: 3%;
-}
-
-@keyframes starFloat {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-25px) rotate(20deg);
-    }
-
-}
-
-
-/* =========================
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 .footer {
     position: absolute;
 
     z-index: 20;
 
-    bottom: 25px;
+    bottom: 0;
+    left: 0;
 
-    left: 40px;
-    right: 40px;
+    width: 100%;
+
+    padding: 20px 40px;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr 1fr;
 
-    align-items: center;
+    color: white;
 
-    font-size: 18px;
+    background:
+        rgba(0,100,160,0.35);
 
-    font-weight: 600;
+    backdrop-filter: blur(8px);
+
+    font-weight: bold;
+
+    font-family: "Roboto Slab", sans-serif;
+
 }
 
 .footer div:nth-child(2) {
     text-align: center;
 }
 
-.footer a {
+.footer div:nth-child(3) {
     text-align: right;
 }
 
+.footer a {
+    color: white;
 
-/* =========================
-   OTHER PAGES
-========================= */
-
-.content-section {
-    min-height: 100vh;
-
-    background: #f7fbff;
-
-    color: #075c8e;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 10vw;
-}
-
-.content-section > div {
-    max-width: 850px;
-}
-
-.section-number {
-    font-size: 18px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-
-    opacity: 0.5;
-}
-
-.content-section h2 {
-    font-size: clamp(60px, 10vw, 150px);
-
-    line-height: 0.9;
-
-    margin-bottom: 40px;
-
-    letter-spacing: -5px;
-}
-
-.content-section p {
-    font-size: 22px;
-
-    line-height: 1.7;
+    text-decoration: none;
 }
 
 
-/* =========================
+/* ==============================
    MOBILE
-========================= */
+============================== */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .header {
-        padding: 25px;
+        padding: 20px;
+        font-family: "Roboto Slab", sans-serif;
     }
 
-    .logo {
-        font-size: 22px;
-    }
-
-    .hero-title {
-        left: 5%;
-
-        top: 43%;
-
-        font-size: 17vw;
-
+    .portfolio-title {
+        font-size: 15vw;
         letter-spacing: -3px;
     }
 
-    .rabbit-container {
-        width: 65vw;
-
-        right: -5%;
-        top: 18%;
-    }
-
     .footer {
-        left: 20px;
-        right: 20px;
+        padding: 15px 20px;
+        font-size: 11px;
+        font-family: "Roboto Slab", sans-serif;
 
-        font-size: 12px;
+    }
+}
+.portfolio-title span {
+    position: relative;
+    z-index: 50;
+}
+
+.rabbit {
+    z-index: 20;
+}
+
+/* ==============================
+   BACKGROUND DECORATION
+============================== */
+
+.background-decor {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Ngôi sao */
+.star {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: floatStar 4s ease-in-out infinite;
+}
+
+/* Vị trí từng ngôi sao */
+.star-1 {
+    top: 40%;
+    left: 3%;
+}
+
+.star-2 {
+    top: 70%;
+    right: 10%;
+    width: 200px;
+    animation-delay: 1s;
+}
+
+/* Bong bóng */
+.bubble {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    animation: floatBubble 5s ease-in-out infinite;
+}
+
+/* Vị trí từng bong bóng */
+.bubble-1 {
+    top: 40%;
+    right: 8%;
+}
+
+.bubble-2 {
+    bottom: 25%;
+    right: 8%;
+    width: 35px;
+    animation-delay: 1.5s;
+}
+
+.bubble-3 {
+    right: 6%;
+    top: 40%;
+    width: 30px;
+    animation-delay: 3s;
+}
+
+/* ==============================
+   ANIMATION
+============================== */
+
+@keyframes floatStar {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
     }
 
-    .menu-inner a {
-        font-size: 38px;
+    50% {
+        transform: translateY(-10px) rotate(8deg);
+    }
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    .content-section {
-        padding: 30px;
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* Thanh footer đứng yên */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Chỉ 3 dòng chữ chạy */
+footer > div {
+    animation: footerMove 40s linear infinite;
+}
+
+/* ==============================
+   CHỈ CHẠY CHỮ
+============================== */
+
+@keyframes footerMove {
+
+    /* Vị trí ban đầu */
+    0% {
+        transform: translateX(0);
     }
 
-    .content-section h2 {
-        font-size: 65px;
+    /* Chạy sang trái */
+    12.5% {
+        transform: translateX(-100vw);
     }
 
+    /* Xuất hiện từ bên phải */
+    12.6% {
+        transform: translateX(100vw);
+    }
+
+    /* Chạy về vị trí ban đầu */
+    25% {
+        transform: translateX(0);
+    }
+
+    /* Đứng yên 30 giây */
+    25%,
+    100% {
+        transform: translateX(0);
+    }
 }
