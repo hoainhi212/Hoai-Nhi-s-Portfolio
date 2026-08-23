@@ -1,6 +1,6 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
 /* =====================================================
-   RESET
+RESET
 ===================================================== */
 
 * {
@@ -11,7 +11,7 @@
 
 
 /* =====================================================
-   BODY
+BODY
 ===================================================== */
 
 body {
@@ -28,12 +28,12 @@ body {
     background: #159bd5;
 
     color: white;
+
 }
 
 
 /* =====================================================
-   BACKGROUND DOTS
-   TỰ TẠO BẰNG CSS
+BACKGROUND DOTS
 ===================================================== */
 
 .background-dots {
@@ -59,7 +59,7 @@ body {
 
 
 /* =====================================================
-   MENU BUTTON
+MENU BUTTON
 ===================================================== */
 
 .menu-button {
@@ -111,7 +111,7 @@ body {
 
 
 /* =====================================================
-   MENU
+MENU
 ===================================================== */
 
 .menu {
@@ -158,10 +158,11 @@ body {
 
 
 .menu a {
+
     display: block;
 
     font-family: sans-serif;
-    
+
     padding: 14px;
 
     color: #0879bb;
@@ -171,6 +172,7 @@ body {
     text-decoration: none;
 
     border-radius: 12px;
+
 }
 
 
@@ -181,8 +183,15 @@ body {
 }
 
 
+.menu a.active {
+
+    background: #e8f7ff;
+
+}
+
+
 /* =====================================================
-   BACK BUTTON
+BACK BUTTON
 ===================================================== */
 
 .back-button {
@@ -237,7 +246,7 @@ body {
 
 
 /* =====================================================
-   CLOUD
+CLOUD
 ===================================================== */
 
 .cloud {
@@ -258,7 +267,7 @@ body {
 
 
 /* =====================================================
-   CLOUD 1
+CLOUD 1
 ===================================================== */
 
 .cloud-1 {
@@ -324,7 +333,7 @@ body {
 
 
 /* =====================================================
-   CLOUD 2 — XANH
+CLOUD 2 — XANH
 ===================================================== */
 
 .cloud-2 {
@@ -390,7 +399,7 @@ body {
 
 
 /* =====================================================
-   CLOUD 3
+CLOUD 3
 ===================================================== */
 
 .cloud-3 {
@@ -409,7 +418,7 @@ body {
 
 
 /* =====================================================
-   CLOUD ANIMATION
+CLOUD ANIMATION
 ===================================================== */
 
 @keyframes cloudMove1 {
@@ -447,14 +456,11 @@ body {
 
 
 /* =====================================================
-   DECORATIVE STARS
-===================================================== */
-
-/* =====================================================
-   DECORATIVE STARS
+DECORATIVE STARS
 ===================================================== */
 
 .star {
+
     position: absolute;
 
     z-index: 3;
@@ -463,71 +469,78 @@ body {
 
     font-size: 35px;
 
-    animation: floatStar 4s ease-in-out infinite;
+    animation:
+        floatStar
+        4s
+        ease-in-out
+        infinite;
+
 }
 
 
-/* =========================
-   NGÔI SAO 1
-========================= */
-
 .star-1 {
+
     left: 90%;
+
     top: 120px;
 
     font-size: 30px;
 
     animation-delay: 0s;
+
 }
 
 
-/* =========================
-   NGÔI SAO 2
-========================= */
-
 .star-2 {
-    left:45%;
+
+    left: 45%;
+
     top: 120px;
 
     font-size: 30px;
 
     animation-delay: 1s;
+
 }
 
 
-/* =========================
-   NGÔI SAO 3
-========================= */
-
 .star-3 {
+
     left: 10%;
+
     bottom: 250px;
 
     font-size: 20px;
 
     animation-delay: 2s;
+
 }
 
-
-/* =========================
-   STAR ANIMATION
-========================= */
 
 @keyframes floatStar {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
     }
 
     50% {
-        transform: translateY(-10px) rotate(10deg);
+
+        transform:
+            translateY(-10px)
+            rotate(10deg);
+
     }
 
 }
 
+
 /* =====================================================
-   BUBBLES
+BUBBLES
 ===================================================== */
 
 .bubble {
@@ -605,34 +618,177 @@ body {
 
 
 /* =====================================================
-   MAIN CONTENT
+MAIN CONTENT
 ===================================================== */
 
-.about-container {
+.skills-container {
 
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 
-    display: flex;
+    padding: 115px 8% 25px;
 
-    align-items: center;
+    display: grid;
+
+    grid-template-columns:
+        1.05fr 1fr;
+
+    grid-template-rows:
+        190px 190px 270px;
+
+    grid-template-areas:
+
+        ". tech"
+        "teaching office"
+        "mindset .";
+
+    gap: 18px;
 
     position: relative;
 
     z-index: 5;
+}
+
+
+/* =====================================================
+ĐỊNH VỊ 4 KHUNG
+===================================================== */
+
+.tech-card {
+    grid-area: tech;
+
+    /* CHỈNH RỘNG */
+    width: 100%;
+
+    /* CHỈNH CAO */
+    height: 245px;
+
+    /* DỊCH LÊN / XUỐNG */
+    transform: translateY(50px);
+
+    /* DỊCH TRÁI / PHẢI */
+    margin-left: 0px;
+}
+
+.teaching-card {
+    grid-area: teaching;
+
+    width: 100%;
+    height: 250px;
+
+    transform: translateY(-158px);
+
+    margin-left: 0px;
+}
+
+.office-card {
+    grid-area: office;
+
+    width: 100%;
+    height: 300px;
+
+    transform: translateY(100px);
+
+    margin-left: 0px;
+}
+
+.mindset-card {
+    grid-area: mindset;
+
+    width: 100%;
+    height: 270px;
+
+    transform: translateY(-100px);
+
+    margin-left: 0px;
+}
+
+/* =====================================================
+GENERAL CARD
+===================================================== */
+
+.skill-card {
+
+    border-radius: 30px;
+
+    border: 2px solid
+        rgba(255,255,255,0.65);
+
+    padding: 22px 25px;
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+
+    overflow: hidden;
+
+}
+
+
+.skill-card h1 {
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+    color: #071f78;
+
+}
+
+
+.card-subtitle {
+
+    font-size: 15px;
+
+    color: #071d72;
+
+    margin-bottom: 18px;
+
+    font-weight: 500;
 
 }
 
 
 /* =====================================================
-   LEFT — PROFILE IMAGE
+TECH CARD
 ===================================================== */
 
-.about-left {
+.tech-card {
 
-    width: 49%;
+    background:
+        rgba(202, 199, 255, 0.70);
 
-    height: 100vh;
+}
+
+
+.tech-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    transform: translateY(15px);
+
+
+}
+
+
+.tech-item {
+
+    width: 100%;
+
+    height: 58px;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    border-radius: 20px;
 
     display: flex;
 
@@ -640,394 +796,540 @@ body {
 
     justify-content: center;
 
+    gap: 7px;
+
+    color: #081b78;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,0.06);
+
+    transition: 0.25s;
+
+}
+
+
+.tech-item:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+.skill-icon {
+
+    font-size: 23px;
+
 }
 
 
 /* =====================================================
-   RIGHT — ABOUT CONTENT
+TEACHING CARD
 ===================================================== */
 
-.about-right {
-    width: 51%;
-    min-height: 100vh;
+.teaching-card {
 
-    display: flex;
-    flex-direction: column;
+    background:
+        rgba(255, 225, 133, 0.78);
 
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    padding-left: 30px;
-    padding-right: 50px;
-
-    padding-top: 120px;
 }
 
 
-/* =====================================================
-   ABOUT TITLE
-===================================================== */
+.recommend-label {
 
-.about-title {
+    position: absolute;
 
-    color: white;
+    top: 8px;
 
-    font-family: serif;
+    right: 15px;
 
-    font-size:
-        clamp(70px, 8.5vw, 100px);
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.75);
+
+    color: #e87500;
+
+    font-size: 9px;
 
     font-weight: bold;
 
-    line-height: 0.85;
-
-    letter-spacing: 0px;
-
-    margin: 0 0 2px 0;
-
-    position: relative;
-    
-    top: -50px;
-    left: 70px;
-
 }
 
 
-/* =====================================================
-   ABOUT CONTENT
-===================================================== */
-
-.about-content {
-
-    width: 560px;
-
-    min-height: 170px;
-
-    background: rgba(126, 207, 232, 0.339);
-
-    border-radius: 20px;
-
-    padding: 20px 25px;
-
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-
-}
-
-
-/* =====================================================
-   CONTENT SECTION
-===================================================== */
-
-.content-section {
-
-    display: none;
-
-    animation: contentShow 0.35s ease;
-
-}
-
-
-.content-section.active {
-
-    display: block;
-
-}
-
-
-.content-section h2 {
-
-    color: rgb(246, 247, 247);
-
-    font-size: 30px;
-
-    font-family: sans-serif;
-
-    margin-bottom: 15px;
-
-}
-
-
-.content-section p {
-
-    color: rgba(255,255,255,0.95);
-
-    font-size: 20px;
-
-    font-family: sans-serif;
-
-    line-height: 1.6;
-
-    margin-bottom: 7px;
-
-}
-
-
-.content-section strong {
-
-    color: white;
-
-}
-
-
-/* =====================================================
-   CONTENT ANIMATION
-===================================================== */
-
-@keyframes contentShow {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(10px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
-}
-
-
-/* =====================================================
-   ABOUT BUTTONS
-===================================================== */
-
-.about-buttons {
-
-    width: 560px;
+.teaching-grid {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    column-gap: 35px;
-    row-gap: 15px;
+    gap: 12px;
 
-    margin-top: 20px;
 }
 
 
-.about-btn {
+.teaching-item {
 
-    border: none;
+    min-height: 175px;
 
-    padding: 15px 30px;
+    border-radius: 22px;
 
-    border-radius: 10px;
+    background:
+        rgba(255,255,255,0.70);
 
-    background: rgba(255,255,255,0.9);
+    padding: 12px;
 
-    color: #0879bb;
+    text-align: center;
 
-    font-family: sans-serif;
+    color: #4a2410;
 
-    font-size: 15px;
+}
+
+
+.teaching-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.teaching-item h2 {
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.teaching-item p {
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+OFFICE CARD
+===================================================== */
+
+.office-card {
+
+    background:
+        rgba(193, 240, 238, 0.76);
+
+}
+
+
+.office-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.office-item {
+
+    height: 103px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #09244c;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.25s;
+
+}
+
+
+.office-item:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+.office-icon {
+
+    width: 39px;
+
+    height: 39px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
 
     font-weight: bold;
 
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-
-}
-
-
-.about-btn:hover {
-
-    background: #baf58b;
-
-    transform: translateY(-3px);
-
-}
-
-
-.about-btn.active {
-
-    background: #baf58b;
-
-    color: #0879bb;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.12);
-
-}
-
-
-/* =====================================================
-   PROFILE
-===================================================== */
-
-.profile-wrapper {
-
-    width: min(40vw, 550px);
-
-    height: min(40vw, 550px);
-
-    position: relative;
-
-}
-
-
-/* =====================================================
-   PROFILE CIRCLE
-===================================================== */
-
-.profile-circle {
-
-    width: 100%;
-
-    height: 100%;
-
-    border-radius: 50%;
-
-    overflow: hidden;
-
-    background: #c7e8fc;
-
-    border: 7px solid white;
-
-    position: relative;
-
-    z-index: 3;
-
-}
-
-
-.profile-circle img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center;
-
-}
-
-
-/* =====================================================
-   PROFILE STAR
-===================================================== */
-
-.profile-star {
-
-    position: absolute;
-
-    top: 50px;
-
-    left: -5px;
-
     color: white;
 
-    font-size: 50px;
+}
 
-    z-index: 5;
 
-    animation:
-        floatProfileStar
-        4s
-        ease-in-out
-        infinite;
+.canva {
+
+    background: #7457d9;
+
+}
+
+
+.excel-icon {
+
+    background: #168a54;
+
+}
+
+
+.powerpoint {
+
+    background: #e75c31;
+
+}
+
+
+.docs {
+
+    background: #4385f5;
+
+}
+
+
+.sheets {
+
+    background: #34a853;
+
+}
+
+
+.slides {
+
+    background: #f5a623;
+
+}
+
+
+.word {
+
+    background: #2777c7;
+
+}
+
+
+.notion {
+
+    background: #111;
 
 }
 
 
 /* =====================================================
-   PROFILE BUBBLE
+MINDSET CARD
 ===================================================== */
 
-.profile-bubble {
+.mindset-card {
 
-    position: absolute;
+    background:
+        rgba(190, 217, 250, 0.78);
 
-    right: -5px;
+}
 
-    bottom: 50px;
 
-    width: 40px;
+.mindset-content {
 
-    height: 40px;
+    display: grid;
+
+    grid-template-columns:
+        1fr 145px;
+
+    gap: 12px;
+
+}
+
+
+.softskills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.soft-item {
+
+    min-height: 52px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.65);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    color: #12348c;
+
+}
+
+
+.soft-item span {
+
+    font-size: 20px;
+
+}
+
+
+.soft-item p {
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+POMODORO
+===================================================== */
+
+.pomodoro {
+
+    background:
+        rgba(255,255,255,0.65);
+
+    border-radius: 22px;
+
+    padding: 10px;
+
+    text-align: center;
+
+}
+
+
+.pomodoro h3 {
+
+    font-size: 10px;
+
+    color: #173a94;
+
+    margin-bottom: 8px;
+
+}
+
+
+.timer {
+
+    width: 92px;
+
+    height: 92px;
+
+    margin: auto;
 
     border-radius: 50%;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffbdf7,
-            #9eeaff,
-            #baff9c
+    border:
+
+        8px solid
+        #83b8ec;
+
+    border-top-color:
+        #ed6962;
+
+    border-right-color:
+        #ed6962;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #152d8c;
+
+}
+
+
+.pause-button {
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    margin:
+
+        -13px
+        auto
+        8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #5679b7;
+
+    font-size: 11px;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.1);
+
+}
+
+
+.pomodoro p {
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    color: #172d82;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+PROFILE IMAGE
+===================================================== */
+
+.skills-profile {
+
+    position: fixed;
+
+    right: 2%;
+
+    bottom: -5px;
+
+    width: 205px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+}
+
+
+.skills-profile img {
+
+    width: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,255,255,0.9)
         );
 
-    z-index: 5;
-
-    animation:
-        floatProfileBubble
-        5s
-        ease-in-out
-        infinite;
-
 }
 
 
 /* =====================================================
-   PROFILE ANIMATION
+RESPONSIVE
 ===================================================== */
 
-@keyframes floatProfileStar {
+@media (max-width: 1100px) {
 
-    0%,
-    100% {
+    .skills-container {
 
-        transform:
-            translateY(0)
-            rotate(0deg);
+        padding-left: 6%;
+
+        padding-right: 6%;
+
+        gap: 12px;
 
     }
 
-    50% {
 
-        transform:
-            translateY(-12px)
-            rotate(10deg);
+    .skill-card {
+
+        padding: 18px;
+
+    }
+
+
+    .skill-card h1 {
+
+        font-size: 20px;
+
+    }
+
+
+    .tech-item {
+
+        font-size: 11px;
+
+    }
+
+
+    .skills-profile {
+
+        width: 150px;
 
     }
 
 }
 
 
-@keyframes floatProfileBubble {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-15px);
-
-    }
-
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     body {
 
@@ -1036,83 +1338,66 @@ body {
     }
 
 
-    .about-container {
-
-        flex-direction: column;
-
-        padding-top: 100px;
-
-    }
-
-
-    .about-left {
-
-        width: 100%;
+    .skills-container {
 
         height: auto;
 
-        padding: 30px;
-
-    }
-
-
-    .about-right {
-
-        width: 100%;
-
-        min-height: auto;
+        min-height: 100vh;
 
         padding:
+
+            100px
             20px
-            30px
-            60px;
+            120px;
 
-        align-items: center;
+        grid-template-columns: 1fr;
 
-        text-align: center;
-
-    }
-
-
-    .about-title {
-
-        font-size: 75px;
+        grid-template-rows: auto;
 
     }
 
 
-    .about-content {
+    .tech-grid {
 
-        width: 90%;
-
-    }
-
-
-    .about-buttons {
-
-        width: 90%;
+        grid-template-columns:
+            repeat(2, 1fr);
 
     }
 
 
-    .profile-wrapper {
+    .office-grid {
 
-        width: 400px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-        height: 400px;
+    }
 
-        max-width: 75vw;
 
-        max-height: 75vw;
+    .teaching-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .mindset-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .skills-profile {
+
+        width: 110px;
+
+        right: 10px;
 
     }
 
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
 @media (max-width: 500px) {
 
@@ -1145,42 +1430,56 @@ body {
     }
 
 
-    .about-title {
+    .skills-container {
 
-        font-size: 58px;
+        padding:
 
-        letter-spacing: -2px;
-
-    }
-
-
-    .content-section h2 {
-
-        font-size: 23px;
+            90px
+            15px
+            100px;
 
     }
 
 
-    .content-section p {
-
-        font-size: 14px;
-
-    }
-
-
-    .about-buttons {
+    .teaching-grid {
 
         grid-template-columns: 1fr;
 
     }
 
 
-    .profile-wrapper {
+    .softskills-grid {
 
-        width: 300px;
-
-        height: 300px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
     }
 
+}
+
+/* =====================================================
+   PAGE TITLE — KỸ NĂNG
+===================================================== */
+
+.skills-page-title {
+
+   color: white;
+
+    font-size:
+        clamp(70px, 8.5vw, 100px);
+
+    font-weight: bold;
+
+    font-family: serif;
+
+    line-height: 0.85;
+
+    letter-spacing: 0px;
+
+    margin: 0 0 2px 0;
+
+    position: relative;
+    
+    top: -95px;
+    left: 370px;
 }

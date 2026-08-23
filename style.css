@@ -110,7 +110,7 @@ body {
 
     font-size: 25px;
 
-    font-family:"Aclonica", sans-serif;
+    font-family: serif;
 
     font-weight: 900;
 
@@ -200,7 +200,7 @@ body {
 .menu a {
     display: block;
 
-    font-family: "Roboto Slab", sans-serif;
+    font-family: sans-serif;
     
     padding: 14px;
 
@@ -589,7 +589,7 @@ RABBIT IMAGE
 
     font-weight: bold;
 
-    font-family: "Roboto Slab", sans-serif;
+    font-family: sans-serif;
 
 }
 
@@ -616,7 +616,7 @@ RABBIT IMAGE
 
     .header {
         padding: 20px;
-        font-family: "Roboto Slab", sans-serif;
+        font-family: sans-serif;
     }
 
     .portfolio-title {
@@ -627,7 +627,7 @@ RABBIT IMAGE
     .footer {
         padding: 15px 20px;
         font-size: 11px;
-        font-family: "Roboto Slab", sans-serif;
+        font-family: sans-serif;
 
     }
 }

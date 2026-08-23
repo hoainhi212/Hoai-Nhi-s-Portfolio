@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lịch sử công việc - Hà Hoài Nhi</title>
+
+    <link rel="stylesheet"
+          href="experience.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACK BUTTON
+===================================================== -->
+
+<button class="back-button"
+        onclick="history.back()">
+
+    <span>←</span>
+
+</button>
+
+
+<!-- =====================================================
+     MENU BUTTON
+===================================================== -->
+
+<button class="menu-button"
+        id="menuButton">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</button>
+
+
+<!-- =====================================================
+     MENU PANEL
+===================================================== -->
+
+<div class="menu-panel"
+     id="menuPanel">
+
+    <a href="about.html">
+        Hồ sơ
+    </a>
+
+    <a href="skills.html">
+        Kho kỹ năng
+    </a>
+
+    <a href="experience.html"
+       class="active">
+        Lịch sử công việc
+    </a>
+
+    <a href="projects.html">
+        Dự án nổi bật
+    </a>
+
+    <a href="certificates.html">
+        Chứng chỉ
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="career-page">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="page-header">
+
+        <h1>LỊCH SỬ CÔNG VIỆC</h1>
+
+        <p>
+            Cùng khám phá từng chặng đường trong hành trình nghề nghiệp của tớ nheee!!!
+        </p>
+
+    </header>
+
+
+    <!-- =================================================
+         GAME WRAPPER
+    ================================================== -->
+
+    <section class="game-wrapper">
+
+
+        <!-- =================================================
+             HUD
+        ================================================== -->
+
+        <div class="game-hud">
+
+
+            <div class="hud-item">
+
+                <span class="hud-icon">
+                    🗺️
+                </span>
+
+                <div>
+
+                    <small>
+                        CAREER MAP
+                    </small>
+
+                    <strong id="currentPlace">
+                        START
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hud-item">
+
+                <span class="hud-icon">
+                    ⭐
+                </span>
+
+                <div>
+
+                    <small>
+                        EXPERIENCE
+                    </small>
+
+                    <strong id="experienceCount">
+                        0 / ∞
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             MAP
+        ================================================== -->
+
+        <div class="career-map"
+             id="careerMap">
+
+
+            <!-- =================================================
+                 CLOUDS
+            ================================================== -->
+
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+<!-- =================================================
+     TREES
+================================================== -->
+
+<div class="map-tree tree-1">
+    <img src="images/tree1.png" alt="">
+</div>
+
+<div class="map-tree tree-2">
+    <img src="images/tree2.png" alt="">
+</div>
+
+<div class="map-tree tree-3">
+    <img src="images/tree3.png" alt="">
+</div>
+
+<div class="map-tree tree-4">
+    <img src="images/tree1.png" alt="">
+</div>
+
+<div class="map-tree tree-5">
+    <img src="images/tree2.png" alt="">
+</div>
+
+<div class="map-tree tree-6">
+    <img src="images/tree3.png" alt="">
+</div>
+
+<!-- =================================================
+     MAP DECORATIONS
+================================================== -->
+
+<!--tussock -->
+
+<div class="map-decoration tussock tussock-1">
+    <img src="images/tussock.png" alt="">
+</div>
+
+<div class="map-decoration tussock tussock-2">
+    <img src="images/tussock.png" alt="">
+</div>
+
+<div class="map-decoration tussock tussock-3">
+    <img src="images/tussock.png" alt="">
+</div>
+
+<div class="map-decoration tussock tussock-4">
+    <img src="images/tussock.png" alt="">
+</div>
+
+
+<!-- ROCKS -->
+
+<div class="map-decoration rock rock-1">
+    <img src="images/rock1.png" alt="">
+</div>
+
+<div class="map-decoration rock rock-2">
+    <img src="images/rock2.png" alt="">
+</div>
+
+<div class="map-decoration rock rock-3">
+    <img src="images/rock2.png" alt="">
+</div>
+
+
+<!-- PONDS -->
+
+<div class="map-decoration pond pond-1">
+    <img src="images/pond1.png" alt="">
+</div>
+
+<div class="map-decoration pond pond-2">
+    <img src="images/pond2.png" alt="">
+</div>
+            <!-- =================================================
+                 CHIBI ISLANDS
+            ================================================== -->
+
+            <div class="island island-1">
+
+                <div class="land-detail detail-1"></div>
+
+            </div>
+
+
+            <div class="island island-2">
+
+                <div class="land-detail detail-2"></div>
+
+            </div>
+
+
+            <div class="island island-3">
+
+                <div class="land-detail detail-3"></div>
+
+            </div>
+
+
+            <div class="island island-4">
+
+                <div class="land-detail detail-4"></div>
+
+            </div>
+
+
+            <div class="island island-5">
+
+                <div class="land-detail detail-5"></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTINUOUS ROAD
+            ================================================== -->
+
+            <svg class="career-road"
+                 viewBox="0 0 1200 650"
+                 preserveAspectRatio="none">
+
+                <!-- road shadow -->
+
+                <path
+                    class="road-shadow"
+                    d="
+                   M 120 530
+
+    C 105 430,
+      105 300,
+      120 250
+
+    C 200 180,
+      320 150,
+      400 167
+
+    C 500 200,
+      590 400,
+      660 490
+
+    C 740 520,
+      850 350,
+      900 200
+
+    C 940 150,
+      980 300,
+      1000 430
+    "
+/>
+
+
+                <!-- main road -->
+
+               <path
+    class="road"
+    d="
+    M 120 530
+
+    C 105 430,
+      105 300,
+      120 250
+
+    C 200 180,
+      320 150,
+      400 167
+
+    C 500 200,
+      590 400,
+      660 490
+
+    C 740 520,
+      850 350,
+      900 200
+
+    C 940 150,
+      980 300,
+      1000 430
+    "
+/>
+
+                <!-- center road marks -->
+
+                <path
+                    class="road-line"
+                    d="
+                   M 120 530
+
+    C 105 430,
+      105 300,
+      120 250
+
+    C 200 180,
+      320 150,
+      400 167
+
+    C 500 200,
+      590 400,
+      660 490
+
+    C 740 520,
+      850 350,
+      900 200
+
+    C 940 150,
+      980 300,
+      1000 430
+    "
+/>
+
+            </svg>
+
+<!-- =================================================
+     START FLAG
+================================================== -->
+
+<div class="start-point">
+
+    <div class="start-flag">
+        🚩
+    </div>
+
+    <div class="start-label">
+        START
+    </div>
+
+</div>
+
+            <!-- =================================================
+                 GS25
+            ================================================== -->
+
+            <button
+                class="career-stop stop-gs25"
+                data-job="gs25">
+
+                <div class="location-shadow"></div>
+
+
+                <img
+                    src="images/gs25.png"
+                    alt="GS25"
+                    class="career-image"
+                >
+
+
+                <div class="location-label">
+
+                    <strong>
+                        GS25 VN
+                    </strong>
+
+                    <small>
+                        08/2024 — 01/2025
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <!-- =================================================
+                 TEACHING
+            ================================================== -->
+
+            <button
+                class="career-stop stop-teaching"
+                data-job="teaching">
+
+                <div class="location-shadow"></div>
+
+
+                <img
+                    src="images/teaching.png"
+                    alt="Trợ giảng"
+                    class="career-image"
+                >
+
+
+                <div class="location-label">
+
+                    <strong>
+                        TRỢ GIẢNG
+                    </strong>
+
+                    <small>
+                        03/2025 — 03/2026
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <!-- =================================================
+                 TUTOR
+            ================================================== -->
+
+            <button
+                class="career-stop stop-tutor"
+                data-job="tutor">
+
+                <div class="location-shadow"></div>
+
+
+                <img
+                    src="images/tutor.png"
+                    alt="Gia sư"
+                    class="career-image"
+                >
+
+
+                <div class="location-label">
+
+                    <strong>
+                        GIA SƯ
+                    </strong>
+
+                    <small>
+                        09/2025 — NAY
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <!-- =================================================
+                 ACBS
+            ================================================== -->
+
+            <button
+                class="career-stop stop-acbs"
+                data-job="acbs">
+
+                <div class="location-shadow"></div>
+
+
+                <img
+                    src="images/acbs.png"
+                    alt="ACBS"
+                    class="career-image"
+                >
+
+
+                <div class="location-label">
+
+                    <strong>
+                        KIẾN TẬP ACBS
+                    </strong>
+
+                    <small>
+                        04/2026 — 05/2026
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <!-- =================================================
+                 VIB
+            ================================================== -->
+
+            <button
+                class="career-stop stop-vib"
+                data-job="vib">
+
+                <div class="location-shadow"></div>
+
+
+                <img
+                    src="images/vib.png"
+                    alt="VIB"
+                    class="career-image"
+                >
+
+
+                <div class="location-label">
+
+                    <strong>
+                        THỰC TẬP VIB
+                    </strong>
+
+                    <small>
+                        08/2026 — NAY
+                    </small>
+
+                </div>
+            </button>
+
+
+            <!-- =================================================
+                 PLAYER
+            ================================================== -->
+
+            <div
+                class="player"
+                id="player">
+
+                <div class="player-shadow"></div>
+
+
+                <div class="player-character">
+
+                    <img
+                        src="images/embeNhi.png"
+                        alt="Nhi"
+                        class="player-image"
+                    >
+
+                </div>
+
+
+                <div class="player-name">
+                    TỚ
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     JOB DETAIL OVERLAY
+===================================================== -->
+
+<div
+    class="job-overlay"
+    id="jobOverlay">
+
+
+    <div
+        class="job-card"
+        id="jobCard">
+
+
+        <button
+            class="close-card"
+            id="closeCard">
+
+            ×
+
+        </button>
+
+
+        <div class="job-card-top">
+
+
+            <div
+            class="job-icon"
+            id="jobIcon">
+
+            <img id="jobIconImage" src="" alt="">
+
+            </div>
+
+
+            <div>
+
+                <span
+                    class="job-number"
+                    id="jobNumber">
+
+                    QUEST 01
+
+                </span>
+
+
+                <h2 id="jobTitle">
+                    GS25 VN
+                </h2>
+
+
+                <p id="jobDate">
+                    08/2024 — 01/2025
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="job-divider"></div>
+
+
+        <div class="job-role">
+
+            <span class="role-label">
+                ROLE
+            </span>
+
+
+            <strong id="jobRole">
+                Cửa hàng trưởng
+            </strong>
+
+        </div>
+
+
+        <div class="job-description">
+
+            <span class="role-label">
+                EXPERIENCE GAINED
+            </span>
+
+
+            <ul id="jobDescription"></ul>
+
+        </div>
+
+
+        <div class="job-footer">
+
+            <span id="jobStatus">
+                QUEST COMPLETED
+            </span>
+
+            <span>
+                ✦
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   JOB DATA
+===================================================== */
+
+const jobs = {
+
+    gs25: {
+
+        number: "QUEST 01",
+        title: "GS25 VN",
+        date: "08/2024 — 01/2025",
+        role: "Cửa hàng trưởng",
+
+        icon: "images/logogs25.png",
+
+        description: [
+            "Quản lý nhân sự và hoạt động vận hành cửa hàng.",
+            "Đào tạo nhân viên mới.",
+            "Giải quyết các tình huống phát sinh với khách hàng."
+        ]
+    },
+
+
+    teaching: {
+
+        number: "QUEST 02",
+        title: "Trợ giảng Ngữ Văn",
+        date: "03/2025 — 03/2026",
+        role: "Trợ giảng",
+
+        icon: "images/teaching.png",
+
+        description: [
+            "Chuẩn bị giáo trình, slide bài giảng và tài liệu học tập.",
+            "Hỗ trợ giảng viên trong quá trình giảng dạy.",
+            "Hướng dẫn học viên về ngữ pháp, từ vựng và phát âm.",
+            "Chấm bài, theo dõi kết quả học tập.",
+            "Hỗ trợ quản lý lớp học, điểm danh và tổ chức các hoạt động."
+        ]
+    },
+
+
+    tutor: {
+
+        number: "QUEST 03",
+        title: "Gia sư Ngữ Văn, Toán, Tiếng Anh",
+        date: "09/2025 — NAY",
+        role: "Gia sư",
+
+        icon: "images/logo123.png",
+
+        description: [
+            "Dạy kèm học sinh theo hình thức 1 kèm 1.",
+            "Xây dựng giáo án phù hợp với năng lực của từng học sinh.",
+            "Biên soạn bài tập và đề ôn luyện.",
+            "Theo dõi tiến độ học tập và trao đổi với phụ huynh."
+        ]
+    },
+
+
+    acbs: {
+
+        number: "QUEST 04",
+        title: "Kiến tập ACBS",
+        date: "04/2026 — 05/2026",
+        role: "Kiến tập sinh",
+
+        icon: "images/logoACBs.png",
+
+        description: [
+            "Trải nghiệm môi trường làm việc thực tế trong lĩnh vực tài chính - chứng khoán.",
+            "Quan sát và tìm hiểu quy trình làm việc tại doanh nghiệp chứng khoán.",
+            "Tiếp cận các hoạt động và nghiệp vụ thực tế trong môi trường tài chính."
+        ]
+    },
+
+
+    vib: {
+
+        number: "QUEST 05",
+        title: "Thực tập VIB",
+        date: "08/2026 — NAY",
+        role: "Thực tập sinh",
+
+        icon: "images/logoVIB.png",
+
+        description: [
+            "Trải nghiệm môi trường làm việc thực tế tại ngân hàng.",
+            "Tiếp cận quy trình và hoạt động nghiệp vụ tại chi nhánh.",
+            "Học hỏi cách xử lý hồ sơ và thông tin khách hàng trong môi trường ngân hàng."
+        ]
+    }
+
+};
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const stops =
+    document.querySelectorAll(".career-stop");
+
+const player =
+    document.getElementById("player");
+
+const overlay =
+    document.getElementById("jobOverlay");
+
+const closeCard =
+    document.getElementById("closeCard");
+
+const currentPlace =
+    document.getElementById("currentPlace");
+
+const experienceCount =
+    document.getElementById("experienceCount");
+
+const jobNumber =
+    document.getElementById("jobNumber");
+
+const jobTitle =
+    document.getElementById("jobTitle");
+
+const jobDate =
+    document.getElementById("jobDate");
+
+const jobRole =
+    document.getElementById("jobRole");
+
+const jobIcon =
+    document.getElementById("jobIcon");
+
+const jobIconImage =
+    document.getElementById("jobIconImage");
+
+const jobDescription =
+    document.getElementById("jobDescription");
+
+const jobStatus =
+    document.getElementById("jobStatus");
+
+
+/* =====================================================
+   PLAYER POSITIONS
+   CÙNG HỆ TỌA ĐỘ VỚI CON ĐƯỜNG
+===================================================== */
+const startPoint = document.querySelector(".start-point");
+const map = document.getElementById("careerMap");
+
+const startRect = startPoint.getBoundingClientRect();
+const mapRect = map.getBoundingClientRect();
+
+player.style.left =
+    `${startRect.left + startRect.width / 2 - mapRect.left}px`;
+
+player.style.top =
+    `${startRect.top + startRect.height / 2 - mapRect.top}px`;
+
+function movePlayerToStop(jobKey) {
+
+    const stop = document.querySelector(
+        `[data-job="${jobKey}"]`
+    );
+
+    if (!stop) return;
+
+    const map = document.getElementById("careerMap");
+
+    const stopRect = stop.getBoundingClientRect();
+    const mapRect = map.getBoundingClientRect();
+
+    const x =
+        stopRect.left +
+        stopRect.width / 2 -
+        mapRect.left;
+
+    const y =
+        stopRect.top +
+        stopRect.height / 2 -
+        mapRect.top;
+
+    player.style.left = `${x}px`;
+    player.style.top = `${y}px`;
+}
+
+/* =====================================================
+   VISITED JOBS
+===================================================== */
+
+let visitedJobs = new Set();
+
+
+/* =====================================================
+   OPEN JOB
+===================================================== */
+
+function openJob(jobKey) {
+
+    const job =
+        jobs[jobKey];
+
+    if (!job) return;
+
+
+    /* PLAYER */
+
+movePlayerToStop(jobKey);
+
+    /* ACTIVE STOP */
+
+    stops.forEach(stop => {
+
+        stop.classList.remove("selected");
+
+    });
+
+
+    const selectedStop =
+        document.querySelector(
+            `[data-job="${jobKey}"]`
+        );
+
+
+    if (selectedStop) {
+
+        selectedStop.classList.add("selected");
+
+    }
+
+
+    /* HUD */
+
+    currentPlace.textContent =
+        job.title.toUpperCase();
+
+
+    /* VISITED */
+
+    visitedJobs.add(jobKey);
+
+
+    experienceCount.textContent =
+        `${visitedJobs.size} / ∞`;
+
+
+    /* CARD */
+
+    jobNumber.textContent =
+        job.number;
+
+    jobTitle.textContent =
+        job.title;
+
+    jobDate.textContent =
+        job.date;
+
+    jobRole.textContent =
+        job.role;
+
+    jobIconImage.src =
+        job.icon;
+
+    jobStatus.textContent =
+        job.status;
+
+
+    jobDescription.innerHTML = "";
+
+
+    job.description.forEach(item => {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent =
+            item;
+
+        jobDescription.appendChild(li);
+
+    });
+
+
+    /* SHOW CARD */
+
+    setTimeout(() => {
+
+        overlay.classList.add("show");
+
+    }, 450);
+
+}
+
+
+/* =====================================================
+   PLAYER MOVEMENT
+===================================================== */
+
+function movePlayer(jobKey) {
+
+    const position =
+        playerPositions[jobKey];
+
+    if (!position) return;
+
+
+    player.style.left =
+        position.left;
+
+    player.style.top =
+        position.top;
+
+}
+
+
+/* =====================================================
+   CLICK STOPS
+===================================================== */
+
+stops.forEach(stop => {
+
+    stop.addEventListener(
+        "click",
+        () => {
+
+            const jobKey =
+                stop.dataset.job;
+
+            openJob(jobKey);
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   CLOSE CARD
+===================================================== */
+
+function closeJobCard() {
+
+    overlay.classList.remove("show");
+
+
+    stops.forEach(stop => {
+
+        stop.classList.remove("selected");
+
+    });
+
+}
+
+
+closeCard.addEventListener(
+    "click",
+    closeJobCard
+);
+
+
+/* =====================================================
+   CLICK OUTSIDE
+===================================================== */
+
+overlay.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target === overlay
+        ) {
+
+            closeJobCard();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ESC
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+
+            closeJobCard();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const menuPanel =
+    document.getElementById("menuPanel");
+
+
+menuButton.addEventListener(
+    "click",
+    () => {
+
+        menuPanel.classList.toggle("open");
+
+        menuButton.classList.toggle("open");
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL PLAYER
+===================================================== */
+
+player.style.left =
+    playerPositions.start.left;
+
+player.style.top =
+    playerPositions.start.top;
+
+</script>
+
+
+</body>
+
+</html>

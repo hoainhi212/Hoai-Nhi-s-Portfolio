@@ -1,0 +1,1796 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+
+    font-family: Helvetica, sans-serif;
+
+    background: #159bd5;
+    color: white;
+}
+
+
+/* =====================================================
+   BACKGROUND DOTS
+===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -10;
+    pointer-events: none;
+
+    background-color: #159bd5;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,0.55) 1px,
+            transparent 1px
+        );
+
+    background-size: 9px 9px;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+    position: fixed;
+
+    top: 25px;
+    left: 30px;
+
+    width: 55px;
+    height: 48px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: rgba(15,136,206,0.812);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    z-index: 101;
+
+    transition: 0.3s;
+}
+
+.back-button span {
+    color: rgb(239,241,241);
+
+    font-size: 30px;
+    font-family: Helvetica, sans-serif;
+
+    line-height: 1;
+}
+
+.back-button:hover {
+    background: rgba(42,179,242,0.921);
+}
+
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.menu-button {
+    position: fixed;
+
+    top: 25px;
+    right: 30px;
+
+    width: 55px;
+    height: 48px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.18);
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    z-index: 101;
+}
+
+.menu-button span {
+    width: 24px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   MENU PANEL
+===================================================== */
+
+.menu-panel {
+    position: fixed;
+
+    top: 85px;
+    right: 30px;
+
+    width: 250px;
+
+    padding: 15px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.2);
+
+    z-index: 100;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.menu-panel.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.menu-panel a {
+    display: block;
+
+    padding: 14px;
+
+    color: #0879bb;
+
+    font-family: sans-serif;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+}
+
+.menu-panel a:hover,
+.menu-panel a.active {
+    background: #e8f7ff;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.career-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding:
+        0px
+        5%
+        45px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+    top: 35px;
+}
+
+.page-header h1 {
+    top: 0px;
+
+    color: white;
+
+    font-family: serif;
+
+    font-size:
+        clamp(60px,5vw,64px);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 5px 0 rgba(0,0,0,.08);
+}
+
+.page-header p {
+    margin-top: 9px;
+
+    color: rgb(245, 246, 154);
+
+    font-family: serif;
+
+    font-size:
+        clamp(20px,1.3vw,16px);
+}
+
+
+/* =====================================================
+   GAME WRAPPER
+===================================================== */
+
+.game-wrapper {
+    width: 100%;
+    max-width: 1320px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   HUD
+===================================================== */
+
+.game-hud {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.hud-item {
+    min-width: 175px;
+
+    padding: 10px 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    background: rgba(255,255,255,.92);
+
+    border:
+        2px solid rgba(255,255,255,.45);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.08);
+}
+
+.hud-icon {
+    font-size: 25px;
+}
+
+.hud-item small {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    color: #7b92aa;
+}
+
+.hud-item strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: #173b70;
+}
+
+
+/* =====================================================
+   MAP
+===================================================== */
+
+.career-map {
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    border:
+        4px solid rgba(255,255,255,.8);
+
+    background:
+        linear-gradient(
+            180deg,
+            #b8edff 0%,
+            #82d5ee 50%,
+            #65c7e4 100%
+        );
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.18);
+}
+
+/* =====================================================
+   TREES
+===================================================== */
+
+.map-tree {
+    position: absolute;
+
+    z-index: 12;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 5px 4px rgba(40,90,90,.18)
+        );
+}
+
+.map-tree img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   TREE POSITIONS
+===================================================== */
+
+.tree-1 {
+    width: 100px;
+    height: 200px;
+
+    left: 12%;
+    top: 48%;
+}
+
+.tree-2 {
+    width: 80px;
+    height: 185px;
+    left: 22%;
+    top: 0;
+}
+
+.tree-3 {
+    width: 105px;
+    height: 200px;
+
+    left: 39%;
+    top: 38%;
+}
+
+.tree-4 {
+   width: 105px;
+    height: 200px;
+
+    left: 60%;
+    top: 28%;
+}
+
+.tree-5 {
+    width: 100px;
+    height: 195px;
+
+    left: 83%;
+    top: 30%;
+}
+
+.tree-6 {
+    width: 85px;
+    height: 100px;
+
+    left: 43%;
+    top: 55%;
+}
+
+/* =====================================================
+   MAP DECORATIONS
+===================================================== */
+
+.map-decoration {
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 6;
+
+    filter:
+        drop-shadow(
+            0 4px 4px rgba(40,90,90,.15)
+        );
+}
+
+.map-decoration img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   TUSSOCKS
+===================================================== */
+
+.tussock {
+    width: 70px;
+    height: 100px;
+}
+
+.tussock-1 {
+    left: 2%;
+    top: 55%;
+}
+
+.tussock-2 {
+    left: 56%;
+    top: 21%;
+}
+
+.tussock-3 {
+    left: 73%;
+    top: 50%;
+}
+
+.tussock-4 {
+    left: 60%;
+    top: 23%;
+}
+
+
+/* =====================================================
+   ROCKS
+===================================================== */
+
+.rock {
+    width: 55px;
+    height: 45px;
+}
+
+.rock-1 {
+    left: 17%;
+    top: 20%;
+}
+
+.rock-2 {
+    left: 2%;
+    top: 65%;
+}
+
+.rock-3 {
+    left: 57%;
+    top: 48%;
+}
+
+
+/* =====================================================
+   PONDS
+===================================================== */
+
+.pond {
+    width: 200px;
+    height: 250px;
+
+    z-index: 3;
+}
+
+.pond-1 {
+    left: 45%;
+    top: 18%;
+}
+
+.pond-2 {
+    left: 17%;
+    top: 20%;
+}
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.cloud {
+    position: absolute;
+
+    width: 90px;
+    height: 28px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-radius: 50px;
+
+    opacity: .8;
+
+    z-index: 2;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 40px;
+    height: 40px;
+
+    left: 15px;
+    top: -18px;
+}
+
+.cloud::after {
+    width: 50px;
+    height: 50px;
+
+    right: 12px;
+    top: -25px;
+}
+
+.cloud-1 {
+    top: 45px;
+    left: 5%;
+}
+
+.cloud-2 {
+    top: 60px;
+    left: 60%;
+    transform: scale(.90);
+}
+
+.cloud-3 {
+    top: 40px;
+    left: 90%;
+
+    transform: scale(.55);
+}
+
+
+/* =====================================================
+   CHIBI ISLANDS
+===================================================== */
+
+.island {
+    position: absolute;
+
+    /* ĐẤT NẰM TRÊN ĐƯỜNG */
+    z-index: 4;
+
+    background: #8ed879;
+
+    border: 6px solid #d9b978;
+
+    box-shadow:
+        0 8px 0 rgba(71,115,67,.18);
+
+    filter: drop-shadow(
+        0 4px 5px rgba(49,111,119,.12)
+    );
+}
+
+
+/* ---- island 1 ---- */
+
+.island-1 {
+    width: 200px;
+    height: 100px;
+
+    left: 2%;
+    bottom: 50%;
+
+    border-radius:
+        48% 52% 43% 57% /
+        53% 42% 58% 47%;
+
+    transform: rotate(-5deg);
+}
+
+
+/* ---- island 2 ---- */
+
+.island-2 {
+    width: 200px;
+    height: 100px;
+
+    left: 30%;
+    top: 15%;
+
+    border-radius:
+        55% 45% 57% 43% /
+        48% 58% 42% 52%;
+
+    transform: rotate(4deg);
+}
+
+
+/* ---- island 3 ---- */
+
+.island-3 {
+    width: 200px;
+    height: 100px;
+
+    left: 50%;
+    bottom: 20%;
+
+    border-radius:
+        43% 57% 48% 52% /
+        56% 45% 55% 44%;
+
+    transform: rotate(-4deg);
+}
+
+
+/* ---- island 4 ---- */
+
+.island-4 {
+    width: 200px;
+    height: 100px;
+
+    right: 14%;
+    top: 18%;
+
+    border-radius:
+        58% 42% 52% 48% /
+        45% 57% 43% 55%;
+
+    transform: rotate(5deg);
+}
+
+
+/* ---- island 5 ---- */
+
+.island-5 {
+    width: 200px;
+    height: 100px;
+
+    right: 3%;
+    bottom: 20%;
+
+    border-radius:
+        51% 49% 43% 57% /
+        55% 44% 56% 45%;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =====================================================
+   CHIBI LAND
+===================================================== */
+
+.land {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* ĐẤT NẰM TRÊN ĐƯỜNG */
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   LAND DETAILS
+===================================================== */
+
+.land-detail {
+
+    position: absolute;
+
+    background: rgba(255,255,255,0.22);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   CÁC MẢNG TRANG TRÍ NHỎ TRÊN ĐẤT
+===================================================== */
+
+.detail-1 {
+
+    width: 90px;
+    height: 35px;
+
+    left: 8%;
+    bottom: 18%;
+
+    transform: rotate(-15deg);
+}
+
+
+.detail-2 {
+
+    width: 70px;
+    height: 28px;
+
+    left: 25%;
+    top: 27%;
+
+    transform: rotate(12deg);
+}
+
+
+.detail-3 {
+
+    width: 100px;
+    height: 35px;
+
+    left: 45%;
+    bottom: 18%;
+
+    transform: rotate(-8deg);
+}
+
+
+.detail-4 {
+
+    width: 80px;
+    height: 30px;
+
+    right: 25%;
+    top: 23%;
+
+    transform: rotate(15deg);
+}
+
+
+.detail-5 {
+
+    width: 70px;
+    height: 28px;
+
+    right: 6%;
+    bottom: 20%;
+
+    transform: rotate(-12deg);
+}
+
+
+/* =====================================================
+   ROAD
+   ĐƯỜNG ĐI QUA TỪNG ĐẢO
+===================================================== */
+
+.career-road {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* ĐƯỜNG NẰM DƯỚI ĐẤT */
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* shadow */
+
+.road-shadow {
+    fill: none;
+
+    stroke:
+        rgba(69,103,75,.20);
+
+    stroke-width: 48;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* main road */
+
+.road {
+    fill: none;
+
+    stroke:
+        #f5d58e;
+
+    stroke-width: 39;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* little center marks */
+
+.road-line {
+    fill: none;
+
+    stroke:
+        rgba(255,255,255,.48);
+
+    stroke-width: 5;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 5 17;
+}
+
+/* =====================================================
+   START POINT
+===================================================== */
+
+.start-point {
+    position: absolute;
+
+    left: 60px;
+    top: 450px;
+
+    width: 100px;
+    height: 100px;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+.start-flag {
+    position: absolute;
+
+    left: 130%;
+    top: 0px;
+
+    transform: translateX(-50%);
+
+    font-size: 50px;
+
+    filter:
+        drop-shadow(
+            0 4px 4px rgba(0,0,0,.18)
+        );
+}
+
+.start-label {
+    position: absolute;
+
+    left: 65px;
+    bottom: 50px;
+
+    transform: translateX(-50%);
+
+    padding: 6px 12px;
+
+    background: white;
+
+    color: #173b70;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.12);
+}
+
+/* =====================================================
+   CAREER STOPS
+===================================================== */
+
+.career-stop {
+    position: absolute;
+
+    width: 180px;
+    height: 190px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    font-family: Helvetica, sans-serif;
+
+    transition:
+        .35s cubic-bezier(.22,1,.36,1);
+}
+
+.career-stop:hover {
+    transform:
+        translateY(-8px)
+        scale(1.03);
+}
+
+.career-stop.selected {
+    z-index: 30;
+
+    transform:
+        translateY(-10px)
+        scale(1.05);
+}
+
+/* =====================================================
+   STOP POSITIONS
+===================================================== */
+
+.stop-gs25 {
+    left: 3%;
+    bottom: 35%;
+}
+
+.stop-teaching {
+    left: 33%;
+    top: 13%;
+}
+
+.stop-tutor {
+    left: 50%;
+    bottom: 5%;
+}
+
+.stop-acbs {
+    right: 15%;
+    top: 15%;
+}
+
+.stop-vib {
+    right: 5%;
+    bottom: 5%;
+}
+
+
+/* =====================================================
+   CAREER IMAGE
+===================================================== */
+
+.career-image {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform:
+        translateX(-50%);
+
+    width: 200px;
+    height: 250px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 7px 5px
+            rgba(40,90,90,.25)
+        );
+
+    transition:
+        .3s ease;
+}
+
+.career-stop:hover .career-image {
+    transform:
+        translateX(-50%)
+        translateY(-5px);
+}
+
+.stop-teaching .career-image {
+    width: 200px;
+    height: 200px;
+    bottom: 60px;
+    left: 45%;
+}
+
+.stop-tutor .career-image {
+    width: 160px;
+    height: 200px;
+    bottom: 70px;
+    left: 55%;
+}
+
+.stop-acbs .career-image {
+    width: 170px;
+    height: 140px;
+    bottom: 90px;
+
+}
+
+.stop-vib .career-image {
+    width: 180px;
+    height: 200px;
+    left: 55%;
+}
+
+
+/* =====================================================
+   LOCATION SHADOW
+===================================================== */
+
+.location-shadow {
+    position: absolute;
+
+    left: 50%;
+    bottom: 49px;
+
+    width: 105px;
+    height: 20px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(38,83,91,.20);
+
+    filter: blur(4px);
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   LOCATION LABEL
+===================================================== */
+
+.location-label {
+    position: absolute;
+
+    width: 180px;
+
+    padding: 8px 9px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    border:
+        2px solid
+        rgba(23,59,112,.14);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 13px rgba(0,0,0,.12);
+
+    text-align: center;
+}
+
+.stop-gs25 .location-label {
+    left: 0;
+    bottom: 60px;
+}
+.stop-teaching .location-label {
+    left: -20px;
+    bottom: 40px;
+}
+.stop-tutor .location-label {
+    left: 10px;
+    bottom: 60px;
+}
+.stop-acbs .location-label {
+    left: 0;
+    bottom: 40px;
+}
+.stop-vib .location-label {
+    left: 20px;
+    bottom: 50px;
+}
+
+.location-label strong {
+    display: block;
+
+    color: #173b70;
+
+    font-family: Helvetica, sans-serif;
+
+    font-size: 10px;
+}
+
+.location-label small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #718398;
+
+    font-family: Helvetica, sans-serif;
+
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   QUEST NUMBER
+===================================================== */
+
+.quest-marker {
+    position: absolute;
+
+    top: 0;
+    right: 2px;
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #173b70;
+
+    border:
+        3px solid #f0c65b;
+
+    font-family: Helvetica, sans-serif;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 8px rgba(0,0,0,.15);
+}
+
+
+/* =====================================================
+   SELECTED LOCATION
+===================================================== */
+
+.career-stop.selected .location-label {
+    border-color: #f0bd42;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255,215,105,.25),
+
+        0 8px 18px
+        rgba(0,0,0,.16);
+}
+
+.career-stop.selected .quest-marker {
+    animation:
+        questPulse 1s infinite;
+}
+
+@keyframes questPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =====================================================
+   PLAYER
+===================================================== */
+
+.player {
+    position: absolute;
+
+    width: 150px;
+    height: 100px;
+
+    z-index: 50;
+
+    transform:
+        translate(-50%,-50%);
+
+    transition:
+        left 1.3s cubic-bezier(.22,1,.36,1),
+        top 1.3s cubic-bezier(.22,1,.36,1);
+
+    pointer-events: none;
+}
+
+
+/* shadow */
+
+.player-shadow {
+    position: absolute;
+
+    bottom: 0;
+    left: 15px;
+
+    width: 55px;
+    height: 14px;
+
+    background:
+        rgba(0,0,0,.20);
+
+    border-radius: 50%;
+
+    filter: blur(3px);
+}
+
+
+/* image */
+
+.player-character {
+    position: absolute;
+
+    left: 50%;
+    bottom: 7px;
+
+    transform:
+        translateX(-50%);
+
+    width: 150px;
+    height: 85px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    filter:
+        drop-shadow(
+            0 5px 4px
+            rgba(0,0,0,.2)
+        );
+}
+
+.player-image {
+    width: 150px;
+    height: 120px;
+
+    object-fit: contain;
+}
+
+
+/* name */
+
+.player-name {
+    position: absolute;
+
+    left: 50%;
+    top: -35px;
+
+    transform:
+        translateX(-50%);
+
+    padding: 4px 8px;
+
+    border-radius: 7px;
+
+    background: #173b70;
+
+    color: white;
+
+    font-family: Helvetica, sans-serif;
+
+    font-size: 7px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   JOB OVERLAY
+===================================================== */
+
+.job-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(7,36,63,.42);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s ease;
+}
+
+.job-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =====================================================
+   JOB CARD
+===================================================== */
+
+.job-card {
+    position: relative;
+
+    width: min(560px,100%);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+    transform:
+        translateY(25px)
+        scale(.94);
+
+    transition:
+        .35s cubic-bezier(.22,1,.36,1);
+}
+
+.job-overlay.show .job-card {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+.close-card {
+    position: absolute;
+
+    top: 15px;
+    right: 16px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eef7fa;
+
+    color: #37647a;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.close-card:hover {
+    background: #159bd5;
+
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.job-card-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+}
+
+.job-icon {
+    width: 72px;
+    height: 72px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 19px;
+
+    background: #e8f8fc;
+
+    font-size: 38px;
+}
+
+.job-icon img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.job-number {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #159bd5;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.job-card h2 {
+    color: #173b70;
+
+    font-family: Helvetica, sans-serif;
+
+    font-size:
+        clamp(19px,3vw,27px);
+
+    line-height: 1.2;
+}
+
+.job-card-top p {
+    margin-top: 5px;
+
+    color: #8194a5;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.job-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 23px 0;
+
+    background: #e8eef1;
+}
+
+
+/* =====================================================
+   ROLE
+===================================================== */
+
+.role-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #8b9dab;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.job-role strong {
+    color: #173b70;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.job-description {
+    margin-top: 24px;
+}
+
+.job-description ul {
+    padding-left: 19px;
+}
+
+.job-description li {
+    margin-bottom: 10px;
+
+    color: #536b7e;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.job-description li::marker {
+    color: #159bd5;
+}
+
+
+/* =====================================================
+   CARD FOOTER
+===================================================== */
+
+.job-footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 23px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px dashed #d9e5ea;
+
+    color: #159bd5;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.job-card::-webkit-scrollbar {
+    width: 5px;
+}
+
+.job-card::-webkit-scrollbar-thumb {
+    background: #b7dce8;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .career-map {
+        height: 590px;
+    }
+
+    .career-stop {
+        transform: scale(.85);
+    }
+
+    .career-stop:hover {
+        transform:
+            translateY(-6px)
+            scale(.9);
+    }
+
+    .career-stop.selected {
+        transform:
+            translateY(-8px)
+            scale(.92);
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .career-page {
+        padding:
+            85px
+            15px
+            30px;
+    }
+
+    .page-header {
+        margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+        font-size: 50px;
+    }
+
+    .page-header p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .game-hud {
+        gap: 8px;
+    }
+
+    .hud-item {
+        min-width: 0;
+
+        flex: 1;
+
+        padding:
+            8px 10px;
+    }
+
+    .hud-icon {
+        font-size: 20px;
+    }
+
+    .hud-item strong {
+        font-size: 9px;
+    }
+
+    .career-map {
+        height: 680px;
+
+        border-radius: 22px;
+    }
+
+    .stop-gs25 {
+        left: -4%;
+        bottom: 3%;
+    }
+
+    .stop-teaching {
+        left: 12%;
+        top: 4%;
+    }
+
+    .stop-tutor {
+        left: 29%;
+        bottom: 30%;
+    }
+
+    .stop-acbs {
+        right: 8%;
+        top: 24%;
+    }
+
+    .stop-vib {
+        right: -5%;
+        bottom: 4%;
+    }
+
+    .career-stop {
+        transform: scale(.72);
+    }
+
+    .career-stop:hover {
+        transform:
+            translateY(-5px)
+            scale(.76);
+    }
+
+    .career-stop.selected {
+        transform:
+            translateY(-6px)
+            scale(.8);
+    }
+
+    .menu-panel {
+        right: 15px;
+        top: 75px;
+    }
+
+    .back-button {
+        left: 15px;
+        top: 20px;
+    }
+
+    .menu-button {
+        right: 15px;
+        top: 20px;
+    }
+
+    .job-card {
+        padding: 25px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .career-map {
+        height: 610px;
+    }
+
+    .job-card {
+        padding: 23px;
+        border-radius: 20px;
+    }
+
+    .job-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 30px;
+    }
+
+    .job-card h2 {
+        font-size: 19px;
+    }
+
+    .job-description li {
+        font-size: 11px;
+    }
+}
