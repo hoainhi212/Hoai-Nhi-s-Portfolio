@@ -1465,21 +1465,31 @@ RESPONSIVE
 
    color: white;
 
-    font-size:
-        clamp(70px, 8.5vw, 100px);
-
-    font-weight: bold;
-
     font-family: serif;
 
-    line-height: 0.85;
+    font-size: clamp(80px, 5vw, 64px);
 
-    letter-spacing: 0px;
+    font-weight: 700;
 
-    margin: 0 0 2px 0;
+    line-height: 1;
 
-    position: relative;
-    
-    top: -95px;
-    left: 370px;
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-shadow:
+        0 5px 0 rgba(0,0,0,.08);
+
+    position: absolute;
+
+    top: 45px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    z-index: 10;
+
 }
