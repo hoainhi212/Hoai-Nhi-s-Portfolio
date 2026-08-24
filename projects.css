@@ -229,184 +229,7 @@ body::before {
     background: #e8f7ff;
 }
 
-/* =====================================================
-   CLOUD
-===================================================== */
 
-.cloud {
-
-    position: absolute;
-
-    width: 500px;
-    height: 120px;
-
-    border-radius: 100px;
-
-    z-index: 2;
-
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   CLOUD 1
-===================================================== */
-
-.cloud-1 {
-
-    left: -150px;
-    top: 50px;
-
-    background: rgba(246, 249, 247, 0.607);
-
-    opacity: 0.9;
-
-    animation:
-        cloudMove1
-        12s
-        infinite
-        alternate
-        ease-in-out;
-}
-
-
-.cloud-1::before,
-.cloud-1::after {
-
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-}
-
-
-.cloud-1::before {
-
-    width: 220px;
-    height: 220px;
-
-    left: 70px;
-    bottom: 20px;
-
-    background: rgba(246, 248, 246, 0.825);
-}
-
-
-.cloud-1::after {
-
-    width: 250px;
-    height: 180px;
-
-    right: 50px;
-    bottom: 0;
-
-    background: white;
-}
-
-
-/* =====================================================
-   CLOUD 2
-===================================================== */
-
-.cloud-2 {
-
-    right: -150px;
-    bottom: 80px;
-
-    background: #baf58b;
-
-    opacity: 0.8;
-
-    filter: blur(3px);
-
-    animation:
-        cloudMove2
-        15s
-        infinite
-        alternate
-        ease-in-out;
-}
-
-
-.cloud-2::before,
-.cloud-2::after {
-
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    background: #baf58b;
-}
-
-
-.cloud-2::before {
-
-    width: 200px;
-    height: 200px;
-
-    left: 70px;
-    bottom: 20px;
-}
-
-
-.cloud-2::after {
-
-    width: 260px;
-    height: 180px;
-
-    right: 50px;
-    bottom: 0;
-}
-
-
-/* =====================================================
-   CLOUD 3
-===================================================== */
-
-.cloud-3 {
-
-    left: -180px;
-    bottom: -80px;
-
-    background: white;
-
-    opacity: 0.9;
-
-    transform: scale(1.3);
-}
-
-
-/* =====================================================
-   CLOUD ANIMATION
-===================================================== */
-
-@keyframes cloudMove1 {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(120px);
-    }
-
-}
-
-
-@keyframes cloudMove2 {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-120px);
-    }
-
-}
 
 /* =====================================================
    MAIN
@@ -504,108 +327,193 @@ body::before {
 /* =====================================================
    CONSTRUCTION SITE
 ===================================================== */
-
 .construction-site {
 
     position: relative;
 
     width: 100%;
-
     max-width: 1250px;
 
-    min-height: 1000px;
+    height: 620px;
 
     margin: auto;
-
-    padding: 80px 40px 150px;
 
     overflow: hidden;
 
     border-radius: 35px;
 
-    background:
-        rgba(255,255,255,.09);
+    background: transparent;
 
-    border:
-        2px solid rgba(255,255,255,.18);
+    border: none;
 
-    box-shadow:
-        0 25px 60px rgba(0,70,110,.15);
+    box-shadow: none;
 }
 
 
+
 /* =====================================================
-   STATUS
+   BIỂN ĐANG THI CÔNG
 ===================================================== */
 
-.construction-status {
+.construction-sign-board {
 
     position: absolute;
 
-    top: 25px;
-    left: 30px;
+    top: 28px;
+    left: 35px;
+
+    z-index: 50;
 
     display: flex;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
 
-    padding: 10px 15px;
+    padding: 12px 18px;
 
     border-radius: 12px;
 
-    background:
-        rgba(2,80,122,.45);
-
-    backdrop-filter: blur(5px);
-
-    z-index: 20;
-}
-
-.status-dot {
-
-    width: 9px;
-    height: 9px;
-
-    border-radius: 50%;
-
     background: #f0c65b;
 
+    color: #173b70;
+
     box-shadow:
-        0 0 12px #f0c65b;
+        5px 6px 0 rgba(0,60,90,.18);
+
+    transform: rotate(-2deg);
+
+    animation:
+        signFloat
+        3s
+        ease-in-out
+        infinite;
 }
 
-.construction-status small {
 
-    display: block;
+.warning-icon {
 
-    font-size: 8px;
+    font-size: 28px;
 
-    letter-spacing: 2px;
-
-    opacity: .65;
+    line-height: 1;
 }
 
-.construction-status strong {
 
-    display: block;
+.sign-text {
 
-    margin-top: 2px;
+    display: flex;
 
-    color: #f5f69a;
+    flex-direction: column;
 
-    font-size: 10px;
+    gap: 3px;
+}
+
+
+.sign-text strong {
+
+    font-size: 13px;
 
     letter-spacing: 1px;
 }
 
 
+.sign-text span {
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    opacity: .7;
+}
+
+
+@keyframes signFloat {
+
+    0%,100% {
+        transform: rotate(-2deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-2deg) translateY(-4px);
+    }
+}
+
+
 /* =====================================================
-   GROUND
+   BOXES AREA
 ===================================================== */
 
-.construction-site::after {
+.boxes-main {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 82px;
+
+    width: 420px;
+    height: 350px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   BOX
+===================================================== */
+
+.box {
+
+    position: absolute;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d99b52,
+            #b87532
+        );
+
+    border:
+        3px solid #925724;
+
+    border-radius: 5px;
+
+    box-shadow:
+        8px 9px 0 rgba(75,40,15,.18);
+
+    overflow: hidden;
+}
+
+
+/* mặt giữa thùng */
+
+.box::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        rgba(113,63,25,.35);
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* mép trên */
+
+.box::after {
 
     content: "";
 
@@ -614,815 +522,808 @@ body::before {
     left: 0;
     right: 0;
 
-    bottom: 0;
+    top: 12px;
 
-    height: 150px;
+    height: 2px;
 
     background:
-        repeating-linear-gradient(
-            135deg,
-            rgba(255,255,255,.07) 0,
-            rgba(255,255,255,.07) 2px,
-            transparent 2px,
-            transparent 12px
-        );
+        rgba(255,220,160,.45);
+}
 
-    border-top:
-        2px dashed rgba(255,255,255,.2);
 
-    pointer-events: none;
+/* băng keo */
+
+.box-tape {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 22px;
+    height: 100%;
+
+    background:
+        rgba(240,198,91,.75);
+
+    transform:
+        translateX(-50%);
+
+    opacity: .8;
 }
 
 
 /* =====================================================
-   CRANE
+   BOX POSITIONS
 ===================================================== */
 
-.crane {
+.box-large {
+
+    width: 190px;
+    height: 125px;
+}
+
+
+.box-medium {
+
+    width: 150px;
+    height: 105px;
+}
+
+
+.box-small {
+
+    width: 120px;
+    height: 90px;
+}
+
+
+/* tầng dưới */
+
+.box-a {
+
+    left: 10px;
+    bottom: 0;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+.box-b {
+
+    right: 8px;
+    bottom: 4px;
+
+    transform:
+        rotate(2deg);
+}
+
+
+/* tầng giữa */
+
+.box-c {
+
+    left: 65px;
+    bottom: 108px;
+
+    transform:
+        rotate(-1deg);
+}
+
+
+.box-d {
+
+    right: 55px;
+    bottom: 112px;
+
+    transform:
+        rotate(3deg);
+}
+
+
+/* tầng trên */
+
+.box-e {
+
+    left: 150px;
+    bottom: 205px;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+/* =====================================================
+   BUNNY BASE
+===================================================== */
+
+.bunny {
 
     position: absolute;
 
-    top: 50px;
-    right: 40px;
+    width: 90px;
+    height: 130px;
 
-    width: 220px;
-    height: 420px;
+    z-index: 30;
 
-    opacity: .55;
+    transform-origin: bottom center;
+}
+
+
+/* =====================================================
+   BUNNY HEAD
+===================================================== */
+
+.bunny-head {
+
+    position: absolute;
+
+    left: 22px;
+    top: 20px;
+
+    width: 58px;
+    height: 55px;
+
+    border-radius:
+        48%
+        48%
+        45%
+        45%;
+
+    background: #fffdf7;
+
+    border:
+        2px solid #d8e7e9;
+
+    box-shadow:
+        0 4px 8px rgba(0,50,80,.12);
+
+    z-index: 4;
+}
+
+
+/* =====================================================
+   EARS
+===================================================== */
+
+.bunny-ear {
+
+    position: absolute;
+
+    top: -15px;
+
+    width: 20px;
+    height: 48px;
+
+    border-radius:
+        50%
+        50%
+        40%
+        40%;
+
+    background: #fffdf7;
+
+    border:
+        2px solid #d8e7e9;
 
     z-index: 2;
 }
 
-.crane-tower {
 
-    position: absolute;
+.ear-left {
 
-    bottom: 0;
-    left: 75px;
-
-    width: 16px;
-    height: 350px;
-
-    border-left: 3px solid #f0c65b;
-    border-right: 3px solid #f0c65b;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0 15px,
-            #f0c65b 15px 18px,
-            transparent 18px 30px
-        );
-}
-
-.crane-top {
-
-    position: absolute;
-
-    top: 40px;
-    left: 62px;
-
-    width: 45px;
-    height: 28px;
-
-    border:
-        3px solid #f0c65b;
-}
-
-.crane-arm {
-
-    position: absolute;
-
-    top: 60px;
-    left: 10px;
-
-    width: 205px;
-    height: 7px;
-
-    background: #f0c65b;
-}
-
-.crane-cable {
-
-    position: absolute;
-
-    top: 66px;
-    right: 20px;
-
-    width: 2px;
-    height: 130px;
-
-    background: #f0c65b;
-}
-
-.crane-hook {
-
-    position: absolute;
-
-    top: 190px;
-    right: 14px;
-
-    width: 18px;
-    height: 22px;
-
-    border:
-        3px solid #f0c65b;
-
-    border-top: none;
-
-    border-radius:
-        0
-        0
-        12px
-        12px;
-}
-
-
-/* =====================================================
-   PROJECT
-===================================================== */
-
-.project {
-
-    position: relative;
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 35px;
-
-    width: 600px;
-
-    margin-bottom: 90px;
-}
-
-
-.project-one {
-    margin-left: 5%;
-}
-
-.project-two {
-    margin-left: 42%;
-}
-
-.project-three {
-    margin-left: 12%;
-}
-
-.project-four {
-    margin-left: 48%;
-}
-
-
-/* =====================================================
-   PROJECT CARD
-===================================================== */
-
-.project-card {
-
-    width: 300px;
-
-    padding: 22px;
-
-    border-radius: 18px;
-
-    background:
-        rgba(255,255,255,.92);
-
-    color: #173b70;
-
-    box-shadow:
-        0 15px 35px rgba(0,60,100,.15);
-
-    transition: .35s;
-}
-
-.project-card:hover {
+    left: 25px;
 
     transform:
-        translateY(-7px)
-        rotate(-1deg);
-
-    box-shadow:
-        0 20px 45px rgba(0,60,100,.22);
+        rotate(-12deg);
 }
 
 
-.project-number {
+.ear-right {
 
-    color: #159bd5;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
-.project-card h2 {
-
-    margin-top: 10px;
-
-    font-family: serif;
-
-    font-size: 24px;
-
-    line-height: 1.15;
-}
-
-.project-card p {
-
-    margin-top: 12px;
-
-    color: #607486;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   TAGS
-===================================================== */
-
-.project-tags {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 6px;
-
-    margin-top: 15px;
-}
-
-.project-tags span {
-
-    padding:
-        6px
-        9px;
-
-    border-radius: 15px;
-
-    background: #e9f8fc;
-
-    color: #159bd5;
-
-    font-size: 8px;
-
-    font-weight: bold;
-}
-
-
-.project-link {
-
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #0879bb;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    letter-spacing: 1px;
-}
-
-
-.construction-label {
-
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #d59b20;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   BUILDING
-===================================================== */
-
-.project-building {
-
-    position: relative;
-
-    width: 145px;
-    height: 220px;
-
-    flex-shrink: 0;
-}
-
-
-/* BUILDING BODY */
-
-.building-body {
-
-    position: absolute;
-
-    bottom: 0;
-
-    width: 145px;
-    height: 190px;
-
-    border:
-        3px solid #486477;
-
-    background:
-        linear-gradient(
-            90deg,
-            #496b7e,
-            #294c61
-        );
-
-    box-shadow:
-        10px 10px 0 rgba(0,50,80,.25);
-}
-
-
-/* ROOF */
-
-.building-roof {
-
-    position: absolute;
-
-    top: 10px;
-
-    left: -7px;
-
-    width: 160px;
-    height: 18px;
-
-    background: #f0c65b;
+    left: 57px;
 
     transform:
-        skewX(-25deg);
-
-    border-radius: 3px;
+        rotate(12deg);
 }
 
 
-/* SIGN */
+/* tai trong */
 
-.building-sign {
+.bunny-ear::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    top: 6px;
+
+    width: 7px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #f5c6d0;
+}
+
+
+/* =====================================================
+   EYES
+===================================================== */
+
+.bunny-eye {
 
     position: absolute;
 
     top: 22px;
 
-    left: 15px;
-    right: 15px;
+    width: 6px;
+    height: 8px;
 
-    padding: 7px;
+    border-radius: 50%;
 
-    text-align: center;
-
-    color: #173b70;
-
-    background: #f5f69a;
-
-    font-size: 8px;
-
-    font-weight: bold;
+    background: #173b70;
 }
 
 
-/* WINDOWS */
+.eye-left {
+    left: 17px;
+}
 
-.building-windows {
+
+.eye-right {
+    right: 17px;
+}
+
+
+/* =====================================================
+   NOSE
+===================================================== */
+
+.bunny-nose {
 
     position: absolute;
 
-    top: 65px;
+    left: 50%;
+    top: 34px;
 
-    left: 17px;
-    right: 17px;
+    width: 7px;
+    height: 6px;
 
-    display: grid;
+    border-radius: 50%;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    background: #e996a7;
 
-    gap: 10px;
+    transform:
+        translateX(-50%);
 }
 
-.building-windows span {
 
-    height: 25px;
+/* =====================================================
+   BODY
+===================================================== */
 
-    background:
-        #bdeeff;
+.bunny-body {
+
+    position: absolute;
+
+    left: 25px;
+    top: 70px;
+
+    width: 52px;
+    height: 58px;
+
+    border-radius:
+        45%
+        45%
+        40%
+        40%;
+
+    background: #fffdf7;
 
     border:
-        2px solid #173b70;
+        2px solid #d8e7e9;
 
     box-shadow:
-        inset 0 0 8px rgba(255,255,255,.4);
+        0 5px 8px rgba(0,50,80,.1);
+
+    z-index: 2;
 }
 
 
-/* DOOR */
+/* =====================================================
+   FEET
+===================================================== */
 
-.building-door {
+.bunny-foot {
+
+    position: absolute;
+
+    top: 112px;
+
+    width: 27px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #fffdf7;
+
+    border:
+        2px solid #d8e7e9;
+
+    z-index: 1;
+}
+
+
+.foot-left {
+    left: 18px;
+}
+
+
+.foot-right {
+    right: 17px;
+}
+
+
+/* =====================================================
+   BUNNY 1 — NHÌN THÙNG
+===================================================== */
+
+.bunny-look {
+
+    left: 21%;
+
+    bottom: 82px;
+
+    transform:
+        scale(.95);
+
+    animation:
+        bunnyLook
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes bunnyLook {
+
+    0%,100% {
+        transform:
+            scale(.95)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            scale(.95)
+            rotate(-5deg)
+            translateX(8px);
+    }
+}
+
+
+/* =====================================================
+   BUNNY 2 — BÊ ĐỒ
+===================================================== */
+
+.bunny-carry {
+
+    right: 19%;
+
+    bottom: 83px;
+
+    animation:
+        bunnyCarry
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes bunnyCarry {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-6px);
+    }
+}
+
+
+/* =====================================================
+   ARMS
+===================================================== */
+
+.bunny-arms {
+
+    position: absolute;
+
+    left: 20px;
+    top: 78px;
+
+    width: 65px;
+
+    z-index: 5;
+}
+
+
+.arm-left,
+.arm-right {
+
+    position: absolute;
+
+    width: 35px;
+    height: 12px;
+
+    border-radius: 10px;
+
+    background: #fffdf7;
+
+    border:
+        2px solid #d8e7e9;
+}
+
+
+.arm-left {
+
+    left: 0;
+
+    transform:
+        rotate(25deg);
+}
+
+
+.arm-right {
+
+    right: 0;
+
+    transform:
+        rotate(-25deg);
+}
+
+
+/* =====================================================
+   ĐỒ ĐANG BÊ
+===================================================== */
+
+.carried-item {
+
+    position: absolute;
+
+    left: 35px;
+    top: 77px;
+
+    width: 35px;
+    height: 30px;
+
+    background: #7fc7df;
+
+    border:
+        3px solid #4b91aa;
+
+    border-radius: 4px;
+
+    z-index: 6;
+
+    animation:
+        itemMove
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes itemMove {
+
+    0%,100% {
+        transform:
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            rotate(4deg)
+            translateY(-3px);
+    }
+}
+
+
+/* =====================================================
+   LADDER
+===================================================== */
+
+.ladder {
+
+    position: absolute;
+
+    left: 67%;
+
+    bottom: 95px;
+
+    width: 105px;
+    height: 270px;
+
+    transform:
+        rotate(-10deg);
+
+    z-index: 22;
+}
+
+
+.ladder-side {
 
     position: absolute;
 
     bottom: 0;
 
-    left: 51px;
+    width: 7px;
+    height: 270px;
 
-    width: 43px;
-    height: 48px;
+    border-radius: 5px;
 
-    background: #173b70;
+    background: #f0c65b;
 
-    border:
-        2px solid #f0c65b;
+    box-shadow:
+        2px 2px 0 rgba(100,60,10,.2);
+}
+
+
+.ladder-left {
+    left: 10px;
+}
+
+
+.ladder-right {
+    right: 10px;
+}
+
+
+.ladder-step {
+
+    position: absolute;
+
+    left: 8px;
+
+    width: 91px;
+    height: 7px;
+
+    border-radius: 5px;
+
+    background: #f0c65b;
+}
+
+
+.step-1 {
+    bottom: 40px;
+}
+
+.step-2 {
+    bottom: 88px;
+}
+
+.step-3 {
+    bottom: 136px;
+}
+
+.step-4 {
+    bottom: 184px;
+}
+
+.step-5 {
+    bottom: 232px;
 }
 
 
 /* =====================================================
-   SCAFFOLDING
+   BUNNY 3 — LEO THANG
 ===================================================== */
 
-.scaffolding {
+.bunny-climb {
+
+    left: 64.5%;
+
+    bottom: 285px;
+
+    z-index: 35;
+
+    transform:
+        rotate(-10deg)
+        scale(.85);
+
+    animation:
+        bunnyClimb
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes bunnyClimb {
+
+    0%,100% {
+        transform:
+            rotate(-10deg)
+            scale(.85)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-10deg)
+            scale(.85)
+            translateY(-9px);
+    }
+}
+
+
+/* tay bám thang */
+
+.bunny-arm-climb {
 
     position: absolute;
 
-    inset: -15px;
+    width: 30px;
+    height: 11px;
 
-    z-index: 5;
+    border-radius: 10px;
+
+    background: #fffdf7;
 
     border:
-        4px solid #f0c65b;
+        2px solid #d8e7e9;
 
-    pointer-events: none;
+    z-index: 6;
 }
 
-.scaffolding::before,
-.scaffolding::after {
+
+.arm-climb-left {
+
+    left: 12px;
+    top: 80px;
+
+    transform:
+        rotate(45deg);
+}
+
+
+.arm-climb-right {
+
+    right: 8px;
+    top: 92px;
+
+    transform:
+        rotate(-45deg);
+}
+
+
+/* chân */
+
+.bunny-leg-climb {
+
+    position: absolute;
+
+    width: 30px;
+    height: 12px;
+
+    border-radius: 10px;
+
+    background: #fffdf7;
+
+    border:
+        2px solid #d8e7e9;
+
+    z-index: 5;
+}
+
+
+.leg-climb-left {
+
+    left: 15px;
+    top: 110px;
+
+    transform:
+        rotate(30deg);
+}
+
+
+.leg-climb-right {
+
+    right: 10px;
+    top: 105px;
+
+    transform:
+        rotate(-30deg);
+}
+
+
+/* =====================================================
+   BUNNY 4 — DỌN DẸP
+===================================================== */
+
+.bunny-clean {
+
+    right: 8%;
+
+    bottom: 80px;
+
+    transform:
+        scale(.8);
+
+    animation:
+        bunnyClean
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes bunnyClean {
+
+    0%,100% {
+        transform:
+            scale(.8)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            scale(.8)
+            rotate(7deg);
+    }
+}
+
+
+/* =====================================================
+   CHỔI
+===================================================== */
+
+.broom {
+
+    position: absolute;
+
+    left: 5px;
+    top: 75px;
+
+    width: 8px;
+    height: 85px;
+
+    background: #80552d;
+
+    transform:
+        rotate(30deg);
+
+    z-index: 6;
+}
+
+
+.broom::after {
 
     content: "";
 
     position: absolute;
 
-    top: 0;
-    bottom: 0;
+    left: -12px;
 
-    width: 4px;
+    bottom: -7px;
 
-    background: #f0c65b;
-}
+    width: 35px;
+    height: 17px;
 
-.scaffolding::before {
-    left: 35px;
-}
+    border-radius:
+        5px
+        5px
+        10px
+        10px;
 
-.scaffolding::after {
-    right: 35px;
-}
-
-.scaffolding i {
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-
-    height: 4px;
-
-    background: #f0c65b;
-}
-
-.scaffolding i:nth-child(1) {
-    top: 45px;
-}
-
-.scaffolding i:nth-child(2) {
-    top: 95px;
-}
-
-.scaffolding i:nth-child(3) {
-    top: 145px;
-}
-
-.scaffolding i:nth-child(4) {
-    top: 195px;
-}
-
-
-/* CONSTRUCTION SIGN */
-
-.construction-sign {
-
-    position: absolute;
-
-    z-index: 10;
-
-    top: 75px;
-    left: 37px;
-
-    width: 70px;
-
-    padding: 7px;
-
-    text-align: center;
-
-    color: #173b70;
-
-    background: #f0c65b;
-
-    font-size: 20px;
-
-    transform: rotate(-5deg);
-}
-
-.construction-sign small {
-
-    display: block;
-
-    font-size: 7px;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   BLUEPRINT
-===================================================== */
-
-.blueprint {
-
-    position: relative;
-
-    width: 145px;
-    height: 190px;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
-
-    border:
-        3px solid #d8f4ff;
-
-    background:
-        #175b83;
-
-    transform:
-        rotate(-4deg);
-
-    box-shadow:
-        8px 8px 0 rgba(0,60,100,.2);
-}
-
-
-.blueprint-grid {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,.12) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.12) 1px,
-            transparent 1px
-        );
-
-    background-size: 15px 15px;
-}
-
-
-.blueprint-title {
-
-    position: absolute;
-
-    top: 15px;
-    left: 15px;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-
-.blueprint-building {
-
-    position: absolute;
-
-    left: 35px;
-    top: 55px;
-
-    width: 75px;
-    height: 80px;
-
-    border:
-        2px solid #d8f4ff;
-}
-
-
-.blueprint-building div {
-
-    position: absolute;
-
-    height: 2px;
-
-    background: #d8f4ff;
-}
-
-.blueprint-building div:nth-child(1) {
-
-    width: 45px;
-
-    top: 20px;
-    left: 12px;
-}
-
-.blueprint-building div:nth-child(2) {
-
-    width: 45px;
-
-    top: 40px;
-    left: 12px;
-}
-
-.blueprint-building div:nth-child(3) {
-
-    width: 45px;
-
-    top: 60px;
-    left: 12px;
-}
-
-
-.blueprint-note {
-
-    position: absolute;
-
-    bottom: 15px;
-    right: 12px;
-
-    font-size: 7px;
-
-    text-align: right;
-
-    line-height: 1.5;
-}
-
-
-/* =====================================================
-   EMPTY PROJECT
-===================================================== */
-
-.empty-project {
-
-    position: relative;
-
-    width: 145px;
-    height: 190px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border:
-        3px dashed rgba(255,255,255,.45);
-
-    background:
-        rgba(255,255,255,.05);
-}
-
-
-.warning-sign {
-
-    position: absolute;
-
-    top: 25px;
-
-    color: #f0c65b;
-
-    font-family: serif;
-
-    font-size: 45px;
-
-    font-weight: bold;
-}
-
-.empty-project span {
-
-    margin-top: 90px;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-
-    opacity: .6;
-}
-
-
-/* =====================================================
-   WORKER
-===================================================== */
-
-.worker {
-
-    position: absolute;
-
-    right: 22%;
-
-    bottom: 80px;
-
-    z-index: 30;
-
-    text-align: center;
-}
-
-.worker-character {
-
-    font-size: 55px;
-
-    animation:
-        workerMove 2s ease-in-out infinite;
-}
-
-.worker-bubble {
-
-    margin-bottom: 5px;
-
-    padding:
-        7px
-        12px;
-
-    border-radius: 10px;
-
-    background: white;
-
-    color: #0879bb;
-
-    font-size: 9px;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.12);
-}
-
-@keyframes workerMove {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.construction-footer {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-top: 30px;
-
-    color: #f5f69a;
-
-    font-family: serif;
-
-    font-size: 13px;
-
-    opacity: .8;
+    background: #e7b45a;
 }
 
 
@@ -1432,54 +1333,41 @@ body::before {
 
 @media (max-width: 900px) {
 
-    .project,
-    .project-one,
-    .project-two,
-    .project-three,
-    .project-four {
+    .construction-site {
 
-        width: 90%;
-
-        margin-left: 5%;
-
-        margin-right: 5%;
+        height: 600px;
     }
 
-    .crane {
+    .boxes-main {
 
-        opacity: .18;
-
-        right: -40px;
+        transform:
+            translateX(-50%)
+            scale(.85);
     }
+
+    .bunny-look {
+        left: 12%;
+    }
+
+    .bunny-carry {
+        right: 10%;
+    }
+
+    .ladder {
+        left: 70%;
+    }
+
 }
 
 
 @media (max-width: 650px) {
 
-    .back-button {
-
-        left: 15px;
-        top: 20px;
-    }
-
-    .menu-button {
-
-        right: 15px;
-        top: 20px;
-    }
-
-    .menu-panel {
-
-        right: 15px;
-        top: 75px;
-    }
-
     .projects-page {
 
         padding:
             0
-            20px
-            40px;
+            15px
+            30px;
     }
 
     .page-header {
@@ -1496,37 +1384,127 @@ body::before {
 
     .construction-site {
 
-        padding:
-            80px
-            20px
-            100px;
+        height: 600px;
+
+        border-radius: 25px;
     }
 
-    .project {
+    .construction-sign-board {
 
-        width: 100%;
+        top: 20px;
+        left: 20px;
 
-        margin-left: 0;
+        transform:
+            scale(.8)
+            rotate(-2deg);
 
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 25px;
+        transform-origin: left top;
     }
 
-    .project-card {
+    .boxes-main {
 
-        width: 100%;
+        left: 50%;
+
+        bottom: 100px;
+
+        transform:
+            translateX(-50%)
+            scale(.62);
     }
 
-    .crane {
+    .bunny-look {
+
+        left: 4%;
+
+        bottom: 85px;
+
+        transform:
+            scale(.65);
+    }
+
+    .bunny-carry {
+
+        right: 0;
+
+        bottom: 85px;
+
+        transform:
+            scale(.65);
+    }
+
+    .ladder {
+
+        left: 69%;
+
+        bottom: 110px;
+
+        transform:
+            rotate(-10deg)
+            scale(.65);
+
+        transform-origin: bottom;
+    }
+
+    .bunny-climb {
+
+        left: 63%;
+
+        bottom: 260px;
+
+        transform:
+            rotate(-10deg)
+            scale(.6);
+    }
+
+    .bunny-clean {
 
         display: none;
     }
 
-    .worker {
+}
 
-        display: none;
-    }
+.bunny-carry .bunny-head {
+    transform: rotate(-5deg);
+}
+
+.bunny-carry .bunny-body {
+    transform: rotate(-3deg);
+}
+
+.bunny-carry .bunny-arms {
+    transform: translateY(3px);
+}
+
+/* =====================================================
+   ĐẨY ĐỐNG THÙNG + THỎ LÊN TRÊN
+===================================================== */
+
+/* Đống thùng */
+.boxes-main {
+    bottom: 145px;
+}
+
+/* Thỏ nhìn thùng */
+.bunny-look {
+    bottom: 145px;
+}
+
+/* Thỏ bê đồ */
+.bunny-carry {
+    bottom: 145px;
+}
+
+/* Thang */
+.ladder {
+    bottom: 155px;
+}
+
+/* Thỏ leo thang */
+.bunny-climb {
+    bottom: 345px;
+}
+
+/* Thỏ dọn dẹp */
+.bunny-clean {
+    bottom: 145px;
 }
